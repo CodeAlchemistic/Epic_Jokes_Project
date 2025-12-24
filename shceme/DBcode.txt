@@ -7,6 +7,7 @@ Table Users {
 Table Jokes {
   joke_id INT [pk]
   user_id INT
+  joke_content nvarchar(max)
   rating INT
 }
 
@@ -14,6 +15,7 @@ Table Comments {
   comment_id INT [pk]
   user_id INT
   joke_id INT
+  comment_content nvarchar(max) [NOT NULL]
 }
 
 
@@ -23,4 +25,4 @@ Ref: "Users"."user_id" < "Jokes"."user_id"
 Ref: "Users"."user_id" < "Comments"."user_id"
 
 
-Ref: "Jokes"."joke_id" < "Comments"."joke_id"
+Ref: "Jokes"."joke_id" < "Comments"."joke_id"d"
