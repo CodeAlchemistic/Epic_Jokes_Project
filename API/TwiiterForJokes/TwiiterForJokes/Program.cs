@@ -1,3 +1,6 @@
+using TwiiterForJokes.Context;
+using TwiiterForJokes.Entitys;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,4 +23,15 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+AppDbContext appDbContext = new AppDbContext();
+
+
+
+List<Usr> Usrs = appDbContext.Users.ToList();
+Console.WriteLine("fdfd");
+
+
 app.Run();
+
+
+

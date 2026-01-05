@@ -1,10 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Tom\u00E1\u0161\\Desktop\\TwiiterForJokes\\",
+  "WorkspaceRootPath": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\tom\u00E1\u0161\\desktop\\twiiterforjokes\\twiiterforjokes\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\javurekvojtech\\documents\\lol\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\javurekvojtech\\documents\\lol\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\twiiterforjokes.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\twiiterforjokes.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\javurekvojtech\\documents\\lol\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\javurekvojtech\\documents\\lol\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\entitys\\usr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\entitys\\usr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\javurekvojtech\\documents\\lol\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\entitys\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\entitys\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\javurekvojtech\\documents\\lol\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\entitys\\joke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\entitys\\joke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\javurekvojtech\\documents\\lol\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\twiiterforjokes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\twiiterforjokes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +38,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Tom\u00E1\u0161\\Desktop\\TwiiterForJokes\\TwiiterForJokes\\DbContext.cs",
-              "RelativeDocumentMoniker": "TwiiterForJokes\\DbContext.cs",
-              "ToolTip": "C:\\Users\\Tom\u00E1\u0161\\Desktop\\TwiiterForJokes\\TwiiterForJokes\\DbContext.cs",
-              "RelativeToolTip": "TwiiterForJokes\\DbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T14:16:13.115Z",
+              "DocumentIndex": 1,
+              "Title": "TwiiterForJokes",
+              "DocumentMoniker": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
+              "RelativeDocumentMoniker": "TwiiterForJokes\\TwiiterForJokes.csproj",
+              "ToolTip": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
+              "RelativeToolTip": "TwiiterForJokes\\TwiiterForJokes.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-01T15:46:47.46Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Program.cs",
+              "RelativeDocumentMoniker": "TwiiterForJokes\\Program.cs",
+              "ToolTip": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Program.cs",
+              "RelativeToolTip": "TwiiterForJokes\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T15:05:42.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "TwiiterForJokes\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "TwiiterForJokes\\Context\\AppDbContext.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAtwA4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T14:59:17.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Comment.cs",
+              "RelativeDocumentMoniker": "TwiiterForJokes\\Entitys\\Comment.cs",
+              "ToolTip": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Comment.cs",
+              "RelativeToolTip": "TwiiterForJokes\\Entitys\\Comment.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T14:48:22.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Joke.cs",
+              "DocumentMoniker": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Joke.cs",
+              "RelativeDocumentMoniker": "TwiiterForJokes\\Entitys\\Joke.cs",
+              "ToolTip": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Joke.cs",
+              "RelativeToolTip": "TwiiterForJokes\\Entitys\\Joke.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAD4vxMAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T14:43:09.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Usr.cs",
+              "DocumentMoniker": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Usr.cs",
+              "RelativeDocumentMoniker": "TwiiterForJokes\\Entitys\\Usr.cs",
+              "ToolTip": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Usr.cs",
+              "RelativeToolTip": "TwiiterForJokes\\Entitys\\Usr.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAWwBQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T14:35:58.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TwiiterForJokes.csproj",
+              "DocumentMoniker": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
+              "RelativeDocumentMoniker": "TwiiterForJokes\\TwiiterForJokes.csproj",
+              "ToolTip": "C:\\Users\\javurekvojtech\\Documents\\lol\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
+              "RelativeToolTip": "TwiiterForJokes\\TwiiterForJokes.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-01T14:30:59.764Z"
             }
           ]
         }
