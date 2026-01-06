@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("93289f40-0f52-41e9-a1cf-b03c980799ed")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TwiiterForJokes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+089329796aa4bb80f443a3d23fb6462f76d302c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12871403ecb32004b7065acc742a2d639603de1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TwiiterForJokes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TwiiterForJokes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

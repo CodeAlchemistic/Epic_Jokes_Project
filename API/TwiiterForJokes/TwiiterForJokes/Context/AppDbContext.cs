@@ -9,11 +9,8 @@ namespace TwiiterForJokes.Context
         public DbSet<Joke> Jokes { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        override protected void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            object value = optionsBuilder.UseMySQL("TBD");
-;
-        }
+
     }
 }
