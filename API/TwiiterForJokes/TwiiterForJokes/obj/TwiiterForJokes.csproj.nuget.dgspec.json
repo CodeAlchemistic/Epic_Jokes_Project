@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vojta\\source\\ds\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj": {}
+    "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vojta\\source\\ds\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj": {
+    "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vojta\\source\\ds\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
+        "projectUniqueName": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
         "projectName": "TwiiterForJokes",
-        "projectPath": "C:\\Users\\vojta\\source\\ds\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
-        "packagesPath": "C:\\Users\\vojta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vojta\\source\\ds\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\obj\\",
+        "projectPath": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
+        "packagesPath": "C:\\Users\\SobotkaTomas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vojta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SobotkaTomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "\\\\kacenka\\Images\\VS_Nuget\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -78,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
