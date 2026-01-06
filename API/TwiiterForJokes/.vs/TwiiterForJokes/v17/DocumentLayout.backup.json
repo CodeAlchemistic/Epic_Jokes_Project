@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\sobotkatomas\\desktop\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|c:\\users\\sobotkatomas\\desktop\\epic_jokes_project\\api\\twiiterforjokes\\twiiterforjokes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A63998C3-6F36-4C0C-B97E-B17716923C42}|TwiiterForJokes\\TwiiterForJokes.csproj|solutionrelative:twiiterforjokes\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,11 +53,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TwiiterForJokes",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
               "RelativeDocumentMoniker": "TwiiterForJokes\\TwiiterForJokes.csproj",
@@ -61,12 +65,24 @@
               "RelativeToolTip": "TwiiterForJokes\\TwiiterForJokes.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-01-01T15:46:47.46Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "TwiiterForJokes\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Controllers\\UserController.cs",
+              "RelativeToolTip": "TwiiterForJokes\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-06T08:24:58.01Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\AppData\\Roaming\\Microsoft\\UserSecrets\\93289f40-0f52-41e9-a1cf-b03c980799ed\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\93289f40-0f52-41e9-a1cf-b03c980799ed\\secrets.json",
@@ -74,12 +90,11 @@
               "RelativeToolTip": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\93289f40-0f52-41e9-a1cf-b03c980799ed\\secrets.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-06T07:22:47.629Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T07:22:47.629Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\appsettings.json",
               "RelativeDocumentMoniker": "TwiiterForJokes\\appsettings.json",
@@ -87,25 +102,24 @@
               "RelativeToolTip": "TwiiterForJokes\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-06T07:22:40.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T07:22:40.751Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Program.cs",
               "RelativeDocumentMoniker": "TwiiterForJokes\\Program.cs",
               "ToolTip": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Program.cs",
               "RelativeToolTip": "TwiiterForJokes\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-01T15:05:42.556Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\appsettings.Development.json",
               "RelativeDocumentMoniker": "TwiiterForJokes\\appsettings.Development.json",
@@ -113,12 +127,11 @@
               "RelativeToolTip": "TwiiterForJokes\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-06T07:50:35.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T07:50:35.279Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Context\\AppDbContext.cs",
               "RelativeDocumentMoniker": "TwiiterForJokes\\Context\\AppDbContext.cs",
@@ -126,12 +139,11 @@
               "RelativeToolTip": "TwiiterForJokes\\Context\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-06T07:21:23.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-06T07:21:23.343Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Comment.cs",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Comment.cs",
               "RelativeDocumentMoniker": "TwiiterForJokes\\Entitys\\Comment.cs",
@@ -139,12 +151,11 @@
               "RelativeToolTip": "TwiiterForJokes\\Entitys\\Comment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T14:48:22.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-01T14:48:22.243Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Joke.cs",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Joke.cs",
               "RelativeDocumentMoniker": "TwiiterForJokes\\Entitys\\Joke.cs",
@@ -152,12 +163,11 @@
               "RelativeToolTip": "TwiiterForJokes\\Entitys\\Joke.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAtwBMAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T14:43:09.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-01T14:43:09.633Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Usr.cs",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\Entitys\\Usr.cs",
               "RelativeDocumentMoniker": "TwiiterForJokes\\Entitys\\Usr.cs",
@@ -165,12 +175,11 @@
               "RelativeToolTip": "TwiiterForJokes\\Entitys\\Usr.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAWwBQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-01T14:35:58.699Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-01T14:35:58.699Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TwiiterForJokes.csproj",
               "DocumentMoniker": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\API\\TwiiterForJokes\\TwiiterForJokes\\TwiiterForJokes.csproj",
               "RelativeDocumentMoniker": "TwiiterForJokes\\TwiiterForJokes.csproj",
@@ -178,8 +187,7 @@
               "RelativeToolTip": "TwiiterForJokes\\TwiiterForJokes.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-01T14:30:59.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-01T14:30:59.764Z"
             }
           ]
         }

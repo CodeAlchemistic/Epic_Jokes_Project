@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TwiiterForJokes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12871403ecb32004b7065acc742a2d639603de1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+099430ec06cd283f121147a63721569f01472d33")]
 [assembly: System.Reflection.AssemblyProductAttribute("TwiiterForJokes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TwiiterForJokes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
