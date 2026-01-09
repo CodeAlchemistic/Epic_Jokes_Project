@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "L9UWWi3DCw2JssWiWnxAqqPxHsFmXlEilP7mwZfTAns=",
-  "Source": "TwiiterForJokes",
-  "BasePath": "_content/TwiiterForJokes",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"QWCcF3OGulA+luKvbAOX2xuoDw6aiRevwy683BpdwpI=","Source":"TwiiterForJokes","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
