@@ -1,0 +1,53 @@
+Varianta 1: Vytvoření nové branche z main (nejčastější)
+1️⃣ Přepni se na main
+git checkout main
+
+
+2️⃣ Aktualizuj main z GitHubu
+git pull origin main
+
+3️⃣ Vytvoř novou branch a přepni se na ni
+git checkout -b nova-branch
+
+
+➡️ Tím vznikne branch založená na aktuálním main.
+
+4️⃣ Push na GitHub
+git push -u origin nova-branch
+
+
+
+
+
+
+
+Varianta 2: Vytvoření branche přímo na GitHubu (web)
+
+Otevři repozitář na GitHubu
+
+Klikni na branch dropdown (kde je main)
+
+Napiš název nové branche
+
+GitHub ji automaticky vytvoří z main
+
+Potom lokálně:
+
+git fetch
+git checkout nova-branch
+
+
+
+
+
+
+
+Varianta 3: Pokud chceš, aby se main aktualizoval z jiné branche
+
+To už není „branch nad main“, ale merge / pull request:
+
+git checkout main
+git merge nova-branch
+
+
+nebo přes Pull Request na GitHubu (doporučeno).
