@@ -12,7 +12,7 @@ namespace TwiiterForJokes.Entitys
         public int UsrId { get; set; }
         [Column("username")]
         public string UserName  { get; set; }
-        [Column("password")]
+        [Column("passwd")]
         public string Password { get; set; }
 
         public Usr(int usrId, string userName, string password)
