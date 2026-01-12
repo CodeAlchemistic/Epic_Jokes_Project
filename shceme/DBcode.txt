@@ -1,0 +1,28 @@
+Table Users {
+  usr_id INT [primary key]
+  username nvarchar(30) [NOT NULL]
+  password nvarchar(30) [NOT NULL]
+}
+
+Table Jokes {
+  joke_id INT [pk]
+  usr_id INT
+  joke_content nvarchar(max)
+  rating INT
+}
+
+Table Comments {
+  comment_id INT [pk]
+  usr_id INT
+  joke_id INT
+  comment_content nvarchar(max) [NOT NULL]
+}
+
+
+
+Ref: "Users"."usr_id" < "Jokes"."usr_id"
+
+Ref: "Users"."user_id" < "Comments"."usr_id"
+
+
+Ref: "Jokes"."joke_id" < "Comments"."joke_id"d"
