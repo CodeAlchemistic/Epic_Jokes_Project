@@ -1,0 +1,19 @@
+A (akce) - nazev_akce - (webová stránka) - metoda
+
+JokesController -
+
+A - GetAllJokes (Jokes) [method - get] - load of everything saved
+A - CreateJoke (Jokes) [method - post]
+A - RateJoke (Jokes) [method - put]
+
+
+UsersController - 
+A - GetAllUsers (Creators) [method - get]
+A - něco když se uživatel zaregistruje, tak se vytvoří jeho instance v databázi, netuším ale jak se taková zrůdnost dělá, nějaké http post :(
+
+
+CommentsController -
+
+A - CommentJoke (Jokes) [method - post]
+A - EditComment (Jokes) [method - put]
+A - GetAllComments (Jokes) [method - get] - load of everything saved
