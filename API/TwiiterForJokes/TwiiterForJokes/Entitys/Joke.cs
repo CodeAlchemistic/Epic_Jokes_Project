@@ -20,6 +20,11 @@ namespace TwiiterForJokes.Entitys
         [Column("rating")]
         public int Rating { get; set; }
 
+
+
+        //for EF Core / serializer / initializer
+        public Joke() {  }
+
         public Joke(int jokeId, int usrId, string jokeContent)
         {
             JokeId = jokeId;
