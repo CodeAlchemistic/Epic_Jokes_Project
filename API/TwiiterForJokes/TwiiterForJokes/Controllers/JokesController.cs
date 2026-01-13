@@ -35,14 +35,9 @@ namespace TwiiterForJokes.Controllers
         }
 
         /*
-        [HttpPost]
-        public async Task<ActionResult<List<Joke>>> CreateJoke(Joke joke)
-        {
-            Joke newJoke = new Joke();
-            
-
-            return Ok(newJoke);
-        }
-        */
+         * continuing HttpPost actions
+         * 
+         */
+        
     }
 }
