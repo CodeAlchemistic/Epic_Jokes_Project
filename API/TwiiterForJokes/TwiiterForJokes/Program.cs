@@ -14,6 +14,15 @@ builder.Services.AddSwaggerGen();
 
 var connString = builder.Configuration.GetConnectionString("uplne_nejvic_tajny_spojovaci_klic");
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    });
+});
+
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connString));
 
 var app = builder.Build();
@@ -24,6 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors();
 
 app.UseAuthorization();
 
