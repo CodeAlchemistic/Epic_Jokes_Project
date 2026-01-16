@@ -2,6 +2,7 @@
 import {Route, Routes} from "react-router-dom";
 //Modules:
 import NavBar from "./Modules/Global/NavBar.tsx";
+import Footer from "./Modules/Global/Footer.tsx";
 //Pages:
 import Landing from "./Pages/Landing.tsx";
 import Feed from "./Pages/Feed.tsx";
@@ -21,7 +22,11 @@ function App() {
                   <Route path="/playground" element={<PlayGround />} />
               </Routes>
           </div>
+          <div>
+              <Footer></Footer>
+          </div>
       </>
+
   )
 }
 
