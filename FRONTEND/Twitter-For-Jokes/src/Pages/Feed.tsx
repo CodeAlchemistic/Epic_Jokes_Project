@@ -1,7 +1,9 @@
-﻿function Feed() {
+﻿import JokeBubble from "../Modules/Feed/JokeBubble.tsx";
+
+function Feed() {
     return (
         <div>
-
+            <JokeBubble />
         </div>
     );
 }

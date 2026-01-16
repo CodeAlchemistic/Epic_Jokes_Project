@@ -8,13 +8,11 @@ interface Item {
 }
 
 const DataTable: React.FC = () => {
-    // 2. Říkáme, že state bude pole objektů typu Item
     const [data, setData] = useState<Item[]>([]);
 
     useEffect(() => {
         fetch('http://localhost:65451/api/Users')
             .then(response => response.json())
-            // TypeScript teď ví, že 'vysledek' je typu Item[]
             .then((resalt: Item[]) => setData(resalt));
     }, []);
 
