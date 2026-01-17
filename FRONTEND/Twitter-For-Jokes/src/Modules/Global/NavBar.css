@@ -1,7 +1,46 @@
 ﻿@import "tailwindcss";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Dongle"; font-size: 30px;
+}
+
+header {
+    padding: 5dvw 0px;
+}
+
+nav > div {
+    position: relative;
+    width: min(900px, 92vw);
+    height: 76px;
+
+    width: 50%;
+    margin: auto;
 
 
-nav {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+
+    padding: 0 5%;
+    border-radius: 999px;
+
+    /*modrá lišta*/
+    background: linear-gradient(180deg, #11c8ff 0%, #04aef3 55%, #0296e3 100%);
+
+    box-shadow:
+            0 18px 35px rgba(0,0,0,.35),
+            inset 0 2px 0 rgba(255,255,255,.35),
+            inset 0 -4px 0 rgba(0,0,0,.12);
+    }
+
+nav > div > a {
+    font-size: 120%;
+    color: white;
 }

@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    color: grey;
+    border-top: 5px solid #3640ac;
+    margin-top: 50px;
+}
+
+footer p {
+    text-align: center;
+    padding: 25px;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}

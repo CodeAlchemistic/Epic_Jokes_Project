@@ -7,10 +7,12 @@ function Nav() {
     return (
         <header>
             <nav>
-                <Link className="" to="/">Home</Link>
-                <img src={logoImg} alt="Logo" style={{width: '20%'}} />
-                <Link to="/feed">Feed</Link>
-                <Link to="/playground">PlayGround</Link>
+                <div className="tfj-bar">
+                    <Link className="" to="/">Home</Link>
+                    <img src={logoImg} alt="Logo" style={{width: '60%'}} />
+                    <Link to="/feed">Jokes</Link>
+                    {/*<Link to="/playground">PlayGround</Link>*/}
+                </div>
             </nav>
         </header>
     )

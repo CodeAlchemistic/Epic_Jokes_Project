@@ -1,11 +1,12 @@
 ﻿import React, { useState, useEffect } from 'react';
-import DeffUsrPic from  './../../assets/DeffUsrPic.jpg'
+import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
 
 interface Joke {
     jokeId: number;
     jokeContent: string;
     rating: string;
+    authorName: string;
 }
 
 const JokeBuble: React.FC = () => {
@@ -20,11 +21,17 @@ const JokeBuble: React.FC = () => {
     return (
        <>
            {data.map((Joke) =>(
-        <div key={Joke.jokeId}>
-             <img src={DeffUsrPic} alt=""/>
-             <figcaption></figcaption>
-             <p>{Joke.jokeContent}</p>
-             <p>{Joke.rating}</p>
+        <div className="bubbleBox" key={Joke.jokeId}>
+
+            <div className="userInfoBox">
+                <img src={usr_icon} alt=""/>
+                <p>{Joke.authorName}</p>
+            </div>
+            <div className="jokeInfoBox">
+                <p>{Joke.jokeContent}</p>
+                <p id={"rating"}>Rating: {Joke.rating}/10</p>
+            </div>
+
         </div>
            ))}
        </>
