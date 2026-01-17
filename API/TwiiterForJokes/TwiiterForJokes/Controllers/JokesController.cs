@@ -22,7 +22,7 @@ namespace TwiiterForJokes.Controllers
         public async Task<ActionResult<List<Joke>>> GetAllJokes()
         {
 
-,            var allJokes = await _context.Jokes.Select(j => new GetJokeDto
+            var allJokes = await _context.Jokes.Select(j => new GetJokeDto
             {
                 JokeId = j.JokeId,
                 JokeContent = j.JokeContent,
