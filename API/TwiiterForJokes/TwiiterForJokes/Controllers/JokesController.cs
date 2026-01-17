@@ -22,17 +22,16 @@ namespace TwiiterForJokes.Controllers
         public async Task<ActionResult<List<Joke>>> GetAllJokes()
         {
 
-            var allJokes = await _context.Jokes.ToListAsync();
-            
-            // technically unreachable code
-            if (allJokes.Count == 0)
+,            var allJokes = await _context.Jokes.Select(j => new GetJokeDto
             {
-                return NotFound();
-            }
-            else
-            {
-                return Ok(allJokes);
-            }
+                JokeId = j.JokeId,
+                JokeContent = j.JokeContent,
+                Rating = j.Rating,
+                AuthorName = j.Usr!.UserName
+            })
+            .ToListAsync();
+
+            return Ok(allJokes);
         }
 
 
