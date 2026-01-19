@@ -37,16 +37,16 @@ namespace TwiiterForJokes.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult<Joke>> CreateJoke (CreateJokeDto dto)
+        public async Task<ActionResult<Joke>> CreateJoke(CreateJokeDto dto)
         {
-            
+
 
             //dto data assignment into DB 
             var joke = new Joke
             {
-                    UsrId = dto.UsrId,
-                    JokeContent = dto.JokeContent,
-                    Rating = dto.Rating
+                UsrId = dto.UsrId,
+                JokeContent = dto.JokeContent,
+                Rating = dto.Rating
             };
 
             //usrId validation if the user really exists in the Db
@@ -58,9 +58,30 @@ namespace TwiiterForJokes.Controllers
 
             //return of the final object to the Db with JokeId autoincrement
             _context.Jokes.Add(joke);
-                await _context.SaveChangesAsync();
-                return Ok(joke);
+            await _context.SaveChangesAsync();
+            return Ok(joke);
 
+        }
+
+        [HttpPut("{id}/rating")]
+        public async Task<ActionResult> EditJokeRating(int id, EditJokeRatingDto dto)
+        {
+            var joke = await _context.Jokes.FindAsync(id);
+
+            if (joke == null)
+            {
+                return NotFound("This user does not exist bro.");
+            }
+
+            if (dto.Rating < 0 || dto.Rating > 10)
+            {
+                return BadRequest("Rating must be in required format.");
+            }
+
+            joke.Rating = dto.Rating;
+
+            await _context.SaveChangesAsync();
+            return Ok(joke);
         }
         
     }
