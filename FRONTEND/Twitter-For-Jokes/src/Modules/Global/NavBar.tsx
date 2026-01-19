@@ -6,7 +6,7 @@ import './NavBar.css';
 function Nav() {
     return (
         <header>
-            <nav>
+            <nav className="main-navbar">
                 <div className="tfj-bar">
                     <Link className="" to="/">Home</Link>
                     <img src={logoImg} alt="Logo" style={{width: '60%'}} />

@@ -1,11 +1,11 @@
 ﻿@import "tailwindcss";
 
-* {
+/** {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+*/
 body {
     font-family: "Dongle"; font-size: 30px;
 }
@@ -14,7 +14,7 @@ header {
     padding: 5dvw 0px;
 }
 
-nav > div {
+nav> div {
     position: relative;
     width: min(900px, 92vw);
     height: 76px;
