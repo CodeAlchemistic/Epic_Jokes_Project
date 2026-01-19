@@ -12,7 +12,7 @@ const Form = () => {
             rating: 5
         };
 
-        fetch('https://localhost:65451/api/Jokes', {
+        fetch('http://localhost:65451/api/Jokes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
