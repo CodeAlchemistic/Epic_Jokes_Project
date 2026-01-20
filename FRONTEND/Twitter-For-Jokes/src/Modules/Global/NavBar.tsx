@@ -11,6 +11,7 @@ function Nav() {
                     <Link className="" to="/">Home</Link>
                     <img src={logoImg} alt="Logo" style={{width: '60%'}} />
                     <Link to="/feed">Jokes</Link>
+                    <Link to="/Creators">Creators</Link>
                     {/*<Link to="/playground">PlayGround</Link>*/}
                 </div>
             </nav>
