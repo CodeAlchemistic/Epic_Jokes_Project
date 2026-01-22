@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TwiiterForJokes.Context;
+using TwiiterForJokes.DtoEntities;
 using TwiiterForJokes.Entitys;
 
 namespace TwiiterForJokes.Controllers;
@@ -19,7 +20,17 @@ public class UsersController : Controller
     [HttpGet]
     public async Task<ActionResult<List<Usr>>> GetUsers()
     {
-        return await _context.Users.ToListAsync();
+        //TODO
+        /*
+        List<Joke> jokes = new List<Joke>();
+
+        var users = await _context.Users.Select(u => new GetUsrsDto
+        {
+            UserName = u.UserName,
+            Jokes = jokes.Count()
+        });
+        return Ok(users);
+        */
     }
 
 
