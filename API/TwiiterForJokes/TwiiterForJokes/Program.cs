@@ -17,10 +17,11 @@ var connString = builder.Configuration.GetConnectionString("uplne_nejvic_tajny_s
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(policy =>
-    {
-        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-    });
+    options.AddPolicy("allow-all", policy =>
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+    );
 });
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connString));
@@ -33,13 +34,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors();
+
+// PŘIDÁNO: Aktivace CORS (Musí být PŘED UseAuthorization a MapControllers)
+app.UseCors("allow-all");
 
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
-
-
-
