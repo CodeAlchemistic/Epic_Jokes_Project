@@ -5,17 +5,20 @@ import './NavBar.css';
 
 function Nav() {
     return (
-        <header>
-            <nav className="main-navbar">
-                <div className="tfj-bar">
-                    <Link className="" to="/">Home</Link>
-                    <img src={logoImg} alt="Logo" style={{width: '60%'}} />
-                    <Link to="/feed">Jokes</Link>
-                    <Link to="/Creators">Creators</Link>
-                    {/*<Link to="/playground">PlayGround</Link>*/}
-                </div>
-            </nav>
-        </header>
+       <>
+         <header>
+             <nav className="main-navbar">
+                 <div className="tfj-bar">
+                     <Link to="/Creators">Creators</Link>
+                     <Link className="" to="/">
+                         <img src={logoImg} alt="Logo" />
+                     </Link>
+                     <Link to="/feed">Jokes</Link>
+                     {/*<Link to="/playground">PlayGround</Link>*/}
+                 </div>
+             </nav>
+         </header>
+       </>
     )
 }
 
