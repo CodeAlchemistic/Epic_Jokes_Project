@@ -22,7 +22,7 @@ public class UsersController : Controller
     {
         var users = await _context.Users.Select(u => new GetUsrsDto
         {
-            Id = u.UsrId,
+            UserId = u.UsrId,
             UserName = u.UserName,
             JokesCount = u.Jokes.Count()
         }).ToListAsync();
@@ -37,7 +37,7 @@ public class UsersController : Controller
         */
     }
 
-
+    
     [HttpGet("{id}")]
     public async Task<Usr> GetUser(int id)
     {
@@ -45,4 +45,5 @@ public class UsersController : Controller
         
         return usr;
     }
+    
 }

@@ -7,7 +7,7 @@ namespace TwiiterForJokes.DtoEntities
     /// </summary>
     public class GetUsrsDto
     {
-        public int Id { get; set; }
+        public int UserId { get; set; }
         public string UserName { get; set; }
         public int JokesCount { get; set; }
     }
