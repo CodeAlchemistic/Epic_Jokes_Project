@@ -2,6 +2,8 @@
 import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
 
+import {convertStringFromInput} from "../../auxiliaryFunctions/auxiliaryFunctions.ts";
+
 interface Joke {
     jokeId: number;
     jokeContent: string;
@@ -11,7 +13,7 @@ interface Joke {
 
 interface RatingUpdateDto {
     jokeId: number;
-    rating: string;
+    rating: number;
 }
 
 const JokeBuble: React.FC = () => {
@@ -38,12 +40,14 @@ const JokeBuble: React.FC = () => {
         const updateRating = (e: React.FormEvent, jokeId: number) => {
          e.preventDefault();
 
+
+
          const jokeToUpdate: RatingUpdateDto = {
              jokeId: jokeId,
-             rating: ratingInput
+             rating: convertStringFromInput(ratingInput),
          }
 
-         fetch('http://localhost:65451/api/Jokes', {
+         fetch(`http://localhost:65451/api/Jokes/${jokeId}/rating`, {
              method: 'PUT',
              headers: {'Content-Type': 'application/json'},
              body: JSON.stringify(jokeToUpdate)
@@ -51,10 +55,12 @@ const JokeBuble: React.FC = () => {
                 if (!response.ok) {
                     console.log(response, "nic není ok")
                 } else{
+                    window.location.reload();
                     console.log(response, "Vše OK")
                 }
             })
         .catch(error => console.log(error));
+
 
         }
 
