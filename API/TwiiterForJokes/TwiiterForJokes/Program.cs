@@ -35,7 +35,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// PŘIDÁNO: Aktivace CORS (Musí být PŘED UseAuthorization a MapControllers)
 app.UseCors("allow-all");
 
 app.UseAuthorization();
