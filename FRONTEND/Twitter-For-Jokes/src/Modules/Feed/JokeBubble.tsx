@@ -9,14 +9,54 @@ interface Joke {
     authorName: string;
 }
 
+interface RatingUpdateDto {
+    jokeId: number;
+    rating: string;
+}
+
 const JokeBuble: React.FC = () => {
     const [data, setData] = useState<Joke[]>([]);
+    const [activeJokeId, setActiveJokeId] = useState<number | null>(null);
+
+    const [ratingInput, setRatingInput] = useState<string>("");
 
     useEffect(() => {
         fetch('http://localhost:65451/api/Jokes')
             .then(response => response.json())
             .then((resalt: Joke[]) => setData(resalt));
     }, []);
+
+
+    const toggleForm = (id: number) => {
+        if (activeJokeId === id) {
+            setActiveJokeId(null);
+        } else {
+            setActiveJokeId(id);
+        }
+    }
+
+        const updateRating = (e: React.FormEvent, jokeId: number) => {
+         e.preventDefault();
+
+         const jokeToUpdate: RatingUpdateDto = {
+             jokeId: jokeId,
+             rating: ratingInput
+         }
+
+         fetch('http://localhost:65451/api/Jokes', {
+             method: 'PUT',
+             headers: {'Content-Type': 'application/json'},
+             body: JSON.stringify(jokeToUpdate)
+         }).then(response => {
+                if (!response.ok) {
+                    console.log(response, "nic není ok")
+                } else{
+                    console.log(response, "Vše OK")
+                }
+            })
+        .catch(error => console.log(error));
+
+        }
 
     return (
        <>
@@ -27,9 +67,17 @@ const JokeBuble: React.FC = () => {
                 <img src={usr_icon} alt=""/>
                 <p>{Joke.authorName}</p>
             </div>
-            <div className="jokeInfoBox">
-                <p>{Joke.jokeContent}</p>
-                <p id={"rating"}>Rating: {Joke.rating}/10</p>
+            <p>{Joke.jokeContent}</p>
+            <div className="ourFlex">
+                <div className="jokeInfoBox">
+                    <p id="rating" onClick={() => toggleForm(Joke.jokeId)}>Rating: {Joke.rating}/10</p>
+                </div>
+                <div className={activeJokeId === Joke.jokeId ? "hid active" : "hid"}>
+                    <form className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
+                    <input id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
+                    <button type="submit">Change rating</button>
+                    </form>
+                </div>
             </div>
 
         </div>
