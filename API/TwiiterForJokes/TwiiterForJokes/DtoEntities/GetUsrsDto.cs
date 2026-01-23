@@ -9,6 +9,6 @@ namespace TwiiterForJokes.DtoEntities
     {
      
         public string UserName { get; set; }
-        public ICollection<Joke> Jokes { get; set; }
+        public int JokesCount { get; set; }
     }
 }

@@ -20,11 +20,14 @@ public class UsersController : Controller
     [HttpGet]
     public async Task<ActionResult<List<Usr>>> GetUsers()
     {
-        //TODO
-        /*
-        List<Joke> jokes = new List<Joke>();
-
         var users = await _context.Users.Select(u => new GetUsrsDto
+        {
+            UserName = u.UserName,
+            JokesCount = u.Jokes.Count()
+        }).ToListAsync();
+
+       return Ok(users);
+       /* var users = await _context.Users.Select(u => new GetUsrsDto
         {
             UserName = u.UserName,
             Jokes = jokes.Count()
