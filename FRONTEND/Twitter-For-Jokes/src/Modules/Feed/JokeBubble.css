@@ -1,5 +1,8 @@
 
 
+.userInfo img {
+    width: 30%;
+}
 
 .userInfoBox {
     display: flex;
@@ -9,6 +12,7 @@
 
     width: 30%;
 }
+
 
 
 .bubbleBox {
@@ -35,4 +39,34 @@
     font-size: 40px;
     color: #f6c671;
     padding: 10px;
+}
+
+
+.hid {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.ourFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ourFlex > div {
+    width: 100%;
+}
+
+#ratingChange {
+    width: 30%;
+    border: 5px solid #04aef3;
+    border-radius: 10px;
+}
+
+.xd {
+    background-color: red;
 }
