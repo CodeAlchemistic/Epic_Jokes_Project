@@ -22,6 +22,7 @@ public class UsersController : Controller
     {
         var users = await _context.Users.Select(u => new GetUsrsDto
         {
+            Id = u.UsrId,
             UserName = u.UserName,
             JokesCount = u.Jokes.Count()
         }).ToListAsync();
