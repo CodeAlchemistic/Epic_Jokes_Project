@@ -9,9 +9,9 @@ function JokePostBubble() {
         e.preventDefault()
 
         const jokeToPost = {
-            userId: 1, //Temp user id, registratoron reqired after probably global varialbe
+            usrId: 1, //Temp user id, registratoron reqired after probably global varialbe
             jokeContent: jokeContent,
-            reting: 5
+            rating: 5
         }
 
         fetch('http://localhost:65451/api/Jokes', {
@@ -23,10 +23,10 @@ function JokePostBubble() {
         })
             .then(response => {
                 if (!response.ok) {
-                    console.log(response, "vše Ok")
+                    console.log(response, "nic není ok")
                     setJokeContent('');
                 } else{
-                    console.log(response, "nic není ok")
+                    console.log(response, "Vše OK")
                 }
             })
         .catch(error => console.log(error));
