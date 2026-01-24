@@ -64,7 +64,7 @@ const [showError, setShowError] = useState(false);
             </div>
         </form>
 
-           {showError && (<p>Joke nor rating cannot be empty!</p>)}
+           {showError && (<p className="error_message">Joke nor rating cannot be empty!</p>)}
 
        </>
     )

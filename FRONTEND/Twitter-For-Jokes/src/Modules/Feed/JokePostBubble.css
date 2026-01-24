@@ -59,3 +59,15 @@ figcaption {
 #numbericImput {
     text-align: center;
 }
+
+.error_message {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    color: darkred;
+    border: 2px solid darkred;
+    border-radius: 15px;
+    font-style: italic;
+
+    margin-top: 10px;
+}
