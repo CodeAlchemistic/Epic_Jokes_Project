@@ -1,5 +1,5 @@
 
-
+/*styles of user section*/
 .userInfo img {
     width: 30%;
 }
@@ -10,11 +10,14 @@
     justify-content: center;
     align-items: center;
 
-    width: 30%;
+    width: 20%;
 }
 
 
 
+
+
+/* styles of the whole bubble*/
 .bubbleBox {
     width: 50%;
     margin: auto;
@@ -34,13 +37,20 @@
     line-height: 1;
 }
 
+
+
+
+/* styles of specific content in the bubble*/
+.bubbleBox > p {
+    padding: 20px;
+}
+
 #rating {
     font-weight: bold;
     font-size: 40px;
     color: #f6c671;
-    padding: 10px;
+    padding-top: 10px;
 }
-
 
 .hid {
     display: none;
@@ -48,25 +58,38 @@
 
 .active {
     display: block;
+    width: 600px;
 }
 
 .ourFlex {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
-.ourFlex > div {
-    width: 100%;
-}
+
+
+
 
 #ratingChange {
     width: 30%;
     border: 5px solid #04aef3;
     border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
 }
 
-.xd {
-    background-color: red;
+#submitRate {
+    background-color: #04aef3;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.info_notif {
+    color: lightslategrey;
+    font-style: italic;
+    font-size: 1.5rem;
 }

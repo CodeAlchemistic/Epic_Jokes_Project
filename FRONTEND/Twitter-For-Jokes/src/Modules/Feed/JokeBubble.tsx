@@ -2,7 +2,7 @@
 import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
 
-import {convertStringFromInput} from "../../auxiliaryFunctions/auxiliaryFunctions.ts";
+import {convertStringFromInput} from "./../Auxiliary/AuxiliaryFunctions.ts";
 
 interface Joke {
     jokeId: number;
@@ -77,11 +77,12 @@ const JokeBuble: React.FC = () => {
             <div className="ourFlex">
                 <div className="jokeInfoBox">
                     <p id="rating" onClick={() => toggleForm(Joke.jokeId)}>Rating: {Joke.rating}/10</p>
+                    <p className="info_notif">click on 'Rating' to change</p>
                 </div>
                 <div className={activeJokeId === Joke.jokeId ? "hid active" : "hid"}>
                     <form className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
                     <input id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
-                    <button type="submit">Change rating</button>
+                    <button type="submit" id="submitRate">Change rating</button>
                     </form>
                 </div>
             </div>
