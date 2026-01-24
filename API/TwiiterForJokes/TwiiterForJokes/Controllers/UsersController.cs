@@ -28,13 +28,6 @@ public class UsersController : Controller
         }).ToListAsync();
 
        return Ok(users);
-       /* var users = await _context.Users.Select(u => new GetUsrsDto
-        {
-            UserName = u.UserName,
-            Jokes = jokes.Count()
-        });
-        return Ok(users);
-        */
     }
 
     
