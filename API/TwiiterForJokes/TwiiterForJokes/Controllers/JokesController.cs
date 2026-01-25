@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.Eventing.Reader;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Asn1;
 using TwiiterForJokes.Context;
 using TwiiterForJokes.DtoEntities;
 using TwiiterForJokes.Entitys;
@@ -70,7 +71,7 @@ namespace TwiiterForJokes.Controllers
 
             if (joke == null)
             {
-                return NotFound("This user does not exist bro.");
+                return NotFound("This joke does not exist bro.");
             }
 
             if (dto.Rating < 0 || dto.Rating > 10)
@@ -82,6 +83,28 @@ namespace TwiiterForJokes.Controllers
 
             await _context.SaveChangesAsync();
             return Ok(joke);
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteJoke(int id)
+        {
+            var joke = await _context.Jokes.FindAsync(id);
+
+            //Joke deleteJoke = new Joke();
+
+            if (joke == null)
+            {
+                return NotFound("This joke does not exist bro.");
+            }
+            else
+            {
+                _context.Jokes.Remove(joke);
+                await _context.SaveChangesAsync();
+            }
+            
+
+            return NoContent();    
+           
         }
         
     }
