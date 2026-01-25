@@ -62,7 +62,29 @@ const JokeBuble: React.FC = () => {
         .catch(error => console.log(error));
 
 
+
+
+    }
+
+        /*Delete joke action pre-prepared stuff*/
+        /*
+        const [error, setError] = useState<string | null>(null);
+
+        const res = await fetch(`http://localhost:65451/api/Jokes/${id}`, {
+            method: 'DELETE',
+        });
+
+
+        if (res.status === 404) {
+            setError("This joke does not exist already.");
+            return;
         }
+        */
+
+
+
+
+
 
     return (
        <>
