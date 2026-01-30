@@ -11,16 +11,17 @@ body {
 }
 
 header {
-    padding: 5dvw 0px;
+    padding-bottom: 5%;
+    padding-top: 80px;
 }
 
-nav> div {
+nav > div {
     position: relative;
-    width: min(900px, 92vw);
+    /*width: min(900px, 92vw);*/
     height: 76px;
 
     width: 50%;
-    margin: auto;
+    margin: 0 auto;
 
 
     display: flex;
@@ -45,6 +46,20 @@ nav > div > a {
     color: white;
 }
 
-nav > img {
+.registration-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
+    padding: 15px;
+    width: 50%;
+    margin: 0 auto;
 }
+.registration-box > a {
+    border: 1px solid #0296e3;
+    padding: 0 5px;
+    border-radius: 5px;
+    background-color: #17134a;
+}
+
+

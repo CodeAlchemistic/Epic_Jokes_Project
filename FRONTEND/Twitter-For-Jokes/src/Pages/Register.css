@@ -1,0 +1,31 @@
+/*still nothing here...*/
+
+h1 {
+    text-align: center;
+}
+
+#register-form {
+    width: 30%;
+    margin: auto;
+}
+
+form input {
+    border: 1px solid #f6c671;
+    border-radius: 5px;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#register-form > button {
+    border: white solid 2px;
+    border-radius: 5px;
+
+    margin-top: 20px;
+    width: 100%;
+
+    background: #0296e3;
+
+}

@@ -8,12 +8,18 @@ import Landing from "./Pages/Landing.tsx";
 import Feed from "./Pages/Feed.tsx";
 import PlayGround from "./Pages/PlayGround.tsx";
 import Creators from "./Pages/Creators.tsx";
+import Register from "./Pages/Register.tsx";
+import Login from "./Pages/Login.tsx";
 
 function App() {
   return (
       <>
           <div>
               <NavBar />
+              <Routes>
+                  <Route path="/login" element={<Login/>}></Route>
+                  <Route path="/register" element={<Register/>}></Route>
+              </Routes>
           </div>
 
           <div>

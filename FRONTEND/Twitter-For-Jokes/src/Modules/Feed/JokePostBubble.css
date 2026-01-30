@@ -3,9 +3,11 @@
 form {
     width: 50%;
     margin: auto;
-    border: 5px solid #858484;
+    border: 2px solid #858484;
     padding: 20px;
     border-radius: 10px;
+
+    background-color: #17134a;
 }
 
 .joke_upper_post_box {
