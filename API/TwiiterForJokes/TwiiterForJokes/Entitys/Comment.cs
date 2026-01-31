@@ -24,6 +24,8 @@ namespace TwiiterForJokes.Entitys
         [Required]
         public string CommentContent { get; set; }
 
+        public Comment() { } 
+
         public Comment(int commentId, int usrId, int jokeId, string commentContent)
         {
             CommentId = commentId;

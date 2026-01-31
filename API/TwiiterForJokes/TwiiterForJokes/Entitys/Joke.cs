@@ -13,12 +13,18 @@ namespace TwiiterForJokes.Entitys
         [Column("usr_id")]
         public int UsrId { get; set; }
         [ForeignKey(nameof(UsrId))]
-        //public Usr? Usr { get; set; }
+
+        public Usr? Usr { get; set; }
 
         [Column("joke_content")]
         public string JokeContent { get; set; }
         [Column("rating")]
         public int Rating { get; set; }
+        
+        
+
+        //for EF Core / serializer / initializer
+        public Joke() {  }
 
         public Joke(int jokeId, int usrId, string jokeContent)
         {
