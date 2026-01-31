@@ -141,7 +141,7 @@ interface RatingUpdateDto {
                 </div>
                 <div className={activeJokeId === Joke.jokeId ? "hid active" : "hid"}>
                     <form className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
-                    <input id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
+                    <input min="1" max="10" id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
                     <button type="submit" id="submitRate">Change rating</button>
                     </form>
                 </div>

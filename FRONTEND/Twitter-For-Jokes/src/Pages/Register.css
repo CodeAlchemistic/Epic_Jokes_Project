@@ -28,4 +28,25 @@ form > div {
 
     background: #0296e3;
 
+    cursor: pointer;
+}
+
+
+/*shows notification if needed*/
+.visit {
+    display: block;
+}
+
+
+.this_error_message {
+    width: 30%;
+
+    margin: auto;
+    text-align: center;
+    color: darkred;
+    border: 2px solid darkred;
+    border-radius: 15px;
+    font-style: italic;
+
+    margin-top: 10px;
 }

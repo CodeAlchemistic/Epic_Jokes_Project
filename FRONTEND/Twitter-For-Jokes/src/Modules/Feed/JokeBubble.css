@@ -52,6 +52,10 @@
     padding-top: 10px;
 }
 
+#rating:hover {
+    cursor: pointer;
+}
+
 .hid {
     display: none;
 }
