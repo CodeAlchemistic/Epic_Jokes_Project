@@ -85,7 +85,7 @@ namespace TwiiterForJokes.Controllers
             return Ok(joke);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteJoke(int id)
         {
             var joke = await _context.Jokes.FindAsync(id);
