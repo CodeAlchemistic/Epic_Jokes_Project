@@ -16,11 +16,15 @@ interface RatingUpdateDto {
     rating: number;
 }
 
-const JokeBuble: React.FC = () => {
+
+    const JokeBuble: React.FC = () => {
     const [data, setData] = useState<Joke[]>([]);
     const [activeJokeId, setActiveJokeId] = useState<number | null>(null);
 
     const [ratingInput, setRatingInput] = useState<string>("");
+
+    const [message, setMessage] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         fetch('http://localhost:65451/api/Jokes')
@@ -66,20 +70,51 @@ const JokeBuble: React.FC = () => {
 
     }
 
-        /*Delete joke action pre-prepared stuff*/
-        /*
-        const [error, setError] = useState<string | null>(null);
-
+    /*Function that deletes specific joke*/
+    async function deleteJoke(id: number) {
         const res = await fetch(`http://localhost:65451/api/Jokes/${id}`, {
             method: 'DELETE',
         });
 
-
         if (res.status === 404) {
-            setError("This joke does not exist already.");
-            return;
+            throw new Error("Tento vtip neexistuje (404).")
         }
-        */
+
+        if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text || `Chyba při mazání (${res.status}).`);
+        }
+
+
+    }
+    /*Function that runs when the button is clicked*/
+    async function onDelete(id: number) {
+        if (!window.confirm("Do you really want to delete the joke?")) return;
+
+        setMessage(null);
+        setError(null);
+
+
+        try {
+            await deleteJoke(id);
+
+            setData(prev => prev.filter(j => j.jokeId !== id));
+
+            setMessage("Joke was deleted successfully.");
+            /*window.location.reload();*/
+        }
+        catch (e) {
+            if (e instanceof Error) {
+                setError(e.message);
+            }
+            else {
+                setError("Unable to delete the joke.");
+            }
+        }
+
+
+
+    }
 
 
 
@@ -88,6 +123,9 @@ const JokeBuble: React.FC = () => {
 
     return (
        <>
+           {message && <p>{message}</p>}
+           {error && <p>{error}</p>}
+
            {data.map((Joke) =>(
         <div className="bubbleBox" key={Joke.jokeId}>
 
@@ -109,6 +147,9 @@ const JokeBuble: React.FC = () => {
                 </div>
             </div>
 
+            <button className="delete_btn" onClick={() => onDelete(Joke.jokeId)}>
+                Delete joke
+            </button>
         </div>
            ))}
        </>
