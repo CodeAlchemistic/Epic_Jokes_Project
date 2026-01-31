@@ -98,6 +98,9 @@ namespace TwiiterForJokes.Controllers
             }
             else
             {
+                var comments = _context.Comments.Where(c => c.JokeId == id);
+                _context.Comments.RemoveRange(comments);
+
                 _context.Jokes.Remove(joke);
                 await _context.SaveChangesAsync();
             }
