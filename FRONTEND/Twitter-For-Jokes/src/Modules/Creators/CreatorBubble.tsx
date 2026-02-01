@@ -1,5 +1,6 @@
 ﻿import React, {useEffect, useState} from "react";
 import usr_icon from './../../assets/usr_icon.png';
+import './CreatorBubble.css';
 
 interface creatorToDesplay {
      userId: number;
@@ -20,10 +21,10 @@ const CreatorBubble: React.FC = () => {
     return (
         <>
             {data.map((creatorToDesplay) =>(
-            <div key={creatorToDesplay.userId}>
+            <div className="creator-bubble" key={creatorToDesplay.userId}>
                 <img src={usr_icon} alt="usr_icon" />
                 <p>{creatorToDesplay.userName}</p>
-                <p>{creatorToDesplay.jokesCount}</p>
+                <p>Creator's jokes: {creatorToDesplay.jokesCount}</p>
             </div>
             ))}
         </>

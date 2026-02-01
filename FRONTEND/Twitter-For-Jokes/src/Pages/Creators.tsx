@@ -3,7 +3,12 @@ import './creators.css'
 
 function Creators() {
     return (
-        <CreatorBubble />
+       <>
+        <h1 id="creator-heading">Creators</h1>
+       <div className="container">
+           <CreatorBubble />
+       </div>
+       </>
     )
 }
 
