@@ -1,10 +1,11 @@
+import LoginBubble from "../Modules/Login/LoginBubble.tsx";
 import "./Login.css"
 
 function Login() {
     return (
-        <div>
-            <p>Toto bude asi login</p>
-        </div>
+        <>
+            <LoginBubble></LoginBubble>
+        </>
     )
 }
 
