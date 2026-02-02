@@ -12,15 +12,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddAuthentication();
+
+
 var connString = builder.Configuration.GetConnectionString("uplne_nejvic_tajny_spojovaci_klic");
 
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("allow-all", policy =>
-        policy.AllowAnyOrigin()
+        policy.WithOrigins("http://localhost:5173")
             .AllowAnyMethod()
             .AllowAnyHeader()
+            .AllowCredentials()
     );
 });
 

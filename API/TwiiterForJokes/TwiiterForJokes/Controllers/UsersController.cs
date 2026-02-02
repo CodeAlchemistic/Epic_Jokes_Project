@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TwiiterForJokes.Context;
@@ -17,6 +18,7 @@ public class UsersController : Controller
         _context = context;
     }
 
+    
     [HttpGet]
     public async Task<ActionResult<List<Usr>>> GetUsers()
     {
@@ -30,7 +32,7 @@ public class UsersController : Controller
        return Ok(users);
     }
 
-    
+
     [HttpGet("{id}")]
     public async Task<Usr> GetUser(int id)
     {
@@ -38,5 +40,6 @@ public class UsersController : Controller
         
         return usr;
     }
-    
+
+
 }
