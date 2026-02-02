@@ -9,13 +9,22 @@ namespace TwiiterForJokes.Entitys
         [Key]
         [Column("comment_id")]
         public int CommentId { get; set; }
-        [ForeignKey("user_id")]
+
+        
+        [Column("usr_id")]
         public int UsrId { get; set; }
-        [ForeignKey("joke_id")]
+        [ForeignKey(nameof(UsrId))]
+
+        [Column("joke_id")]
         public int JokeId { get; set; }
+        [ForeignKey(nameof(JokeId))]
+
+
         [Column("comment_content")]
         [Required]
         public string CommentContent { get; set; }
+
+        public Comment() { } 
 
         public Comment(int commentId, int usrId, int jokeId, string commentContent)
         {

@@ -14,6 +14,16 @@ builder.Services.AddSwaggerGen();
 
 var connString = builder.Configuration.GetConnectionString("uplne_nejvic_tajny_spojovaci_klic");
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("allow-all", policy =>
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+    );
+});
+
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(connString));
 
 var app = builder.Build();
@@ -25,11 +35,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// PŘIDÁNO: Aktivace CORS (Musí být PŘED UseAuthorization a MapControllers)
+app.UseCors("allow-all");
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
-
-
-
