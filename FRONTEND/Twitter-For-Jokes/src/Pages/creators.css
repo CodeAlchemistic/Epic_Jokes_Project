@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+
+    width: 70%;
+    margin: 50px auto;
+}
+
+
+#creator-heading {
+    text-align: left;
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+
+    border-bottom: 2px solid white;
+
+    font-size: 2.5rem;
+}
+
+.creator-bubble {
+    border: 3px solid #04aef3;
+    border-radius: 15px;
+}

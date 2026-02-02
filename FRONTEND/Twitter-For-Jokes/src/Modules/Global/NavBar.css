@@ -1,0 +1,65 @@
+﻿@import "tailwindcss";
+
+/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*/
+body {
+    font-family: "Dongle"; font-size: 30px;
+}
+
+header {
+    padding-bottom: 5%;
+    padding-top: 80px;
+}
+
+nav > div {
+    position: relative;
+    /*width: min(900px, 92vw);*/
+    height: 76px;
+
+    width: 50%;
+    margin: 0 auto;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+
+    padding: 0 5%;
+    border-radius: 999px;
+
+    /*modrá lišta*/
+    background: linear-gradient(180deg, #11c8ff 0%, #04aef3 55%, #0296e3 100%);
+
+    box-shadow:
+            0 18px 35px rgba(0,0,0,.35),
+            inset 0 2px 0 rgba(255,255,255,.35),
+            inset 0 -4px 0 rgba(0,0,0,.12);
+    }
+
+nav > div > a {
+    font-size: 120%;
+    color: white;
+}
+
+.registration-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 15px;
+    width: 50%;
+    margin: 0 auto;
+}
+.registration-box > a {
+    border: 1px solid #0296e3;
+    padding: 0 5px;
+    border-radius: 5px;
+    background-color: #17134a;
+}
+
+
