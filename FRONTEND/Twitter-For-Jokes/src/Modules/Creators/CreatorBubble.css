@@ -1,0 +1,10 @@
+.creator-bubble {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.creator-bubble > img {
+    width: 15dvw;
+}

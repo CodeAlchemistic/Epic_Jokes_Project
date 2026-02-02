@@ -1,0 +1,110 @@
+
+/*styles of user section*/
+.userInfo img {
+    width: 30%;
+}
+
+.userInfoBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 20%;
+}
+
+
+
+
+
+/* styles of the whole bubble*/
+.bubbleBox {
+    width: 50%;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    border: 2px solid #04aef3;
+    padding: 2%;
+
+    margin-top: 40px;
+    border-radius: 50px;
+
+    padding: 20px;
+
+    line-height: 1;
+}
+
+
+
+
+/* styles of specific content in the bubble*/
+.bubbleBox > p {
+    padding: 20px;
+}
+
+#rating {
+    font-weight: bold;
+    font-size: 40px;
+    color: #f6c671;
+    padding-top: 10px;
+}
+
+#rating:hover {
+    cursor: pointer;
+}
+
+.hid {
+    display: none;
+}
+
+.active {
+    display: block;
+    width: 600px;
+}
+
+.ourFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+
+
+#ratingChange {
+    width: 30%;
+    border: 5px solid #04aef3;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#submitRate {
+    background-color: #04aef3;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.info_notif {
+    color: lightslategrey;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.delete_btn {
+    width: fit-content;
+    padding: 0px 10px;
+    margin-top: 25px;
+
+    border: 1px solid red;
+    border-radius: 10px;
+    background-color: #320970;
+
+}
