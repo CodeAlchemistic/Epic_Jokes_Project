@@ -8,7 +8,7 @@ using JwtClaimNames = System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames;
 
 namespace TwiiterForJokes.JwtSranda
 {
-    internal sealed class TokenProvider(IConfiguration configuration)
+    public sealed class TokenProvider(IConfiguration configuration)
     {
 
         public string Create(Usr user)
@@ -21,8 +21,6 @@ namespace TwiiterForJokes.JwtSranda
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity([
-
-                  
                     new Claim(JwtClaimNames.Sub, user.UsrId.ToString()),
                     new Claim(JwtClaimNames.Sub, user.UserName.ToString())
                     
