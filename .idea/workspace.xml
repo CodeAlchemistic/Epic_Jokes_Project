@@ -3,8 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="e311d6ca-1cba-4a5b-ba93-975e5e885236" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/.idea/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/AuthorizationController.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/UsersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Entitys/Usr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Entitys/Usr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/JwtSranda/TokenProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/JwtSranda/TokenProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/TwiiterForJokes.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/TwiiterForJokes.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/creators.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/creators.css" afterDir="false" />
+    </list>
+    <list id="793d5113-1158-4a6e-a24a-ac883ab35b05" name="Changes by vojta" comment="">
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Register/RegisterBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Register/RegisterBubble.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +31,31 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "TrueTeXar"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/CodeAlchemistic/Epic_Jokes_Project.git",
+    "accountId": "2a9dda40-750f-4578-9d9f-24069c2ad3c1"
+  }
+}]]></component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx">
+      <ranges>
+        <range start1="3" end1="4" start2="3" end2="4" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
+        <range start1="10" end1="11" start2="10" end2="11" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
+        <range start1="14" end1="15" start2="14" end2="15" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
+        <range start1="16" end1="16" start2="16" end2="17" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
+        <range start1="17" end1="17" start2="18" end2="19" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
+        <range start1="32" end1="33" start2="34" end2="35" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
+        <range start1="36" end1="37" start2="38" end2="39" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -37,18 +75,18 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "C:/Users/SobotkaTomas/Desktop/Epic_Jokes_Project",
+    "last_opened_file_path": "C:/Users/Tomas/Desktop/Epic_Jokes_Project",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\Tomas\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -61,6 +99,7 @@
       <updated>1769099563969</updated>
       <workItem from="1769099565113" duration="114000" />
       <workItem from="1770023059234" duration="2864000" />
+      <workItem from="1770487102649" duration="4289000" />
     </task>
     <servers />
   </component>

@@ -18,7 +18,7 @@ public class UsersController : Controller
         _context = context;
     }
 
-    
+
     [HttpGet]
     public async Task<ActionResult<List<Usr>>> GetUsers()
     {
@@ -29,7 +29,7 @@ public class UsersController : Controller
             JokesCount = u.Jokes.Count()
         }).ToListAsync();
 
-       return Ok(users);
+        return Ok(users);
     }
 
 
@@ -37,9 +37,26 @@ public class UsersController : Controller
     public async Task<Usr> GetUser(int id)
     {
         Usr usr = await _context.Users.FindAsync(id);
-        
+
         return usr;
     }
 
 
+    [HttpPost]
+    public async Task<ActionResult<Usr>> CreateUser(CreateUserDto dto)
+    {
+        Usr usr = new Usr
+        {
+            UserName = dto.UserName,
+            Password = dto.Password
+        };
+
+        _context.Users.Add(usr);
+        await _context.SaveChangesAsync();
+
+        return Ok(usr);
+        
+
+           
+    }
 }

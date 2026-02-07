@@ -17,6 +17,9 @@ namespace TwiiterForJokes.Entitys
 
         public ICollection<Joke> Jokes { get; set; } = new List<Joke>();
 
+
+        public Usr() { }
+
         public Usr(int usrId, string userName, string password)
         {
             UsrId = usrId;

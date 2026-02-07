@@ -1,20 +1,22 @@
 import {useState} from "react";
 
 function LoginBubble() {
-    const [username, setUsername] = useState("");
+    const [userName, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
         const user = {
-            username: username,
+            username: userName,
             password: password,
         }
 
-        fetch("http://localhost:5000/xxxx", { //link needs to be added later
+        fetch("http://localhost:65451/api/Authentication", { //link needs to be added later
             method: "POST",
+            headers: {'content-type': 'application/json'},
             body: JSON.stringify(user),
+            credentials: "include",
         }).then(response => {
             if (response.ok) {
                 console.log(response);
@@ -30,11 +32,11 @@ function LoginBubble() {
         <form onSubmit={handleSubmit} id="login-form">
             <div>
                 <label htmlFor="username">Username</label>
-                <input type="text" name="username" id="username" value={username}  onChange={(e) => setUsername(e.target.value)} />
+                <input type="text" name="username" id="username" value={userName}  onChange={(e) => setUsername(e.target.value)} />
             </div>
             <div>
                 <label htmlFor="password">Password</label>
-                <input type="text" name="password" id="password" value={password}  onChange={(e) => setPassword(e.target.value)} />
+                <input type="password" name="password" id="password" value={password}  onChange={(e) => setPassword(e.target.value)} />
             </div>
             <button type="submit">Login</button>
         </form>

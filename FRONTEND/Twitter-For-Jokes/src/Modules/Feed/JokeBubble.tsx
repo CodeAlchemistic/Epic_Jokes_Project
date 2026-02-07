@@ -16,7 +16,6 @@ interface RatingUpdateDto {
     rating: number;
 }
 
-
     const JokeBuble: React.FC = () => {
     const [data, setData] = useState<Joke[]>([]);
     const [activeJokeId, setActiveJokeId] = useState<number | null>(null);

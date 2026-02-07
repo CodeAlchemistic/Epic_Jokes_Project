@@ -3,8 +3,8 @@ import {useState} from "react";
 /*validation NEED TO BE ADDED: any of inputs cannot be empty; the username must not already exist*/
 
 function RegisterBubble() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [userName, setUserName] = useState("");
+    const [password, setpassword] = useState("");
     const [passwordAgain, setPasswordAgain] = useState("");
     const [showNotif, setShowNotif] = useState(false);
     const [showPasswordNotif, setShowPasswordNotif] = useState(false);
@@ -13,7 +13,7 @@ function RegisterBubble() {
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        if (username.trim() === "" || password.trim() === "") {
+        if (userName.trim() === "" || password.trim() === "") {
             setShowNotif(true);
             return;
         }
@@ -28,11 +28,12 @@ function RegisterBubble() {
         //setShowNotif(false);
 
         const newUser = {
-            username: username,
+            username: userName,
             password: password,
         }
 
-        fetch("http://localhost:5000/xxx",{ //url needs to be changed
+
+        fetch("http://localhost:65451/api/Users",{ //url needs to be changed
             method: "POST",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newUser),
@@ -52,11 +53,11 @@ function RegisterBubble() {
             <form id="register-form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">Username</label>
-                    <input id="username" type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input id="username" type="text" name="username" value={userName} onChange={(e) => setUserName(e.target.value)} />
                 </div>
                 <div>
                     <label htmlFor="passwordAgain">Password</label>
-                    <input id="password" type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input id="password" type="password" name="password" value={password} onChange={(e) => setpassword(e.target.value)} />
                 </div>
                 <div>
                     <label htmlFor="passwordAgain">Repeat Password</label>

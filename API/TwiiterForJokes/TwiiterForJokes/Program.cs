@@ -1,7 +1,12 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System.Runtime.CompilerServices;
+using System.Text;
 using TwiiterForJokes.Context;
 using TwiiterForJokes.Entitys;
+using TwiiterForJokes.JwtSranda;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +17,34 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAuthentication();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]!))
+        };
+
+        // Zásadní část pro HttpOnly Cookies:
+        options.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                // Název cookie, kterou budeme posílat (např. "secureToken")
+                context.Token = context.Request.Cookies["secureToken"];
+                return Task.CompletedTask;
+            }
+        };
+    });
+builder.Services.AddSingleton<TokenProvider>();
+
+builder.Services.AddAuthorization();
 
 
 var connString = builder.Configuration.GetConnectionString("uplne_nejvic_tajny_spojovaci_klic");
@@ -42,7 +74,10 @@ if (app.Environment.IsDevelopment())
 // PŘIDÁNO: Aktivace CORS (Musí být PŘED UseAuthorization a MapControllers)
 app.UseCors("allow-all");
 
+
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 
