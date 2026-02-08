@@ -1,5 +1,6 @@
+import {useState, useEffect} from 'react'
 import './../Feed/JokePostBubble.tsx'
-import {useEffect, useState} from 'react'
+
 
 export function convertStringFromInput(value: string) {
     const n = Number( value );
@@ -7,17 +8,28 @@ export function convertStringFromInput(value: string) {
 }
 
 
-export function getLoginStatus(){
-    const [isLoggedIn, setIsLoggedIn] = useState<null | boolean>(null);
-
-        fetch('http://localhost:65451/api/Authentication/Ask',{
-        method: 'GET',
-        headers: {'content-type': 'application/json'},
-        credentials: 'include',
-    }).then(response => response.json())
-    .then(json => setIsLoggedIn(json))
-
-
-    return isLoggedIn;
-
+interface user {
+    isAutenticated: boolean;
+    userId: number;
+    userName: string;
 }
+function useLoginStatus() {
+    const [isLoggedIn, setIsLoggedIn] = useState<user | null>(null);
+
+    useEffect(() => {
+        fetch('http://localhost:65451/api/Authentication/this', {
+            method: 'GET',
+            credentials: 'include',
+            headers: {'content-type': 'application/json'}
+        })
+        .then(response => response.json())
+        .then((resalt: user) => setIsLoggedIn(resalt));
+
+    }, []);
+
+    console.log(isLoggedIn);
+
+    return isLoggedIn?.isAutenticated;
+}
+
+export {useLoginStatus};

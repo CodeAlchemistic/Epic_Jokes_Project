@@ -1,6 +1,8 @@
 import RegisterBubble from "../Modules/Register/RegisterBubble.tsx";
 import {Link, Routes} from "react-router-dom";
 import "./Register.css"
+import Login from "./Login.tsx";
+import {Route} from "react-router-dom";
 
 function Register() {
     return (

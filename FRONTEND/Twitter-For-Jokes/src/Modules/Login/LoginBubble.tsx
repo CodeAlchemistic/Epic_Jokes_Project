@@ -14,13 +14,16 @@ function LoginBubble() {
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        setErrorNotification(false);
+        showConfirm(false)
+        setLoginSuccesfull("");
 
         const user = {
             username: userName,
             password: password,
         }
 
-        fetch("http://localhost:65451/api/Authentication", { //link needs to be added later
+        fetch("http://localhost:65451/api/Authentication", {
             method: "POST",
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(user),
@@ -28,6 +31,13 @@ function LoginBubble() {
         }).then(response => {
             if (response.ok) {
                 console.log(response);
+
+                setUsername("")
+                setPassword("")
+                showConfirm(true);
+                setLoginSuccesfull("successfull");
+                setIsLoggedIn(true);
+
             }else{
                 console.log(response);
                 showConfirm(false);
@@ -38,10 +48,12 @@ function LoginBubble() {
         })
 
     }
+
+
     return (
         <>
         <h1>Login</h1>
-        <form onSubmit={handleSubmit} id="login-form">
+        <form onSubmit={handleSubmit}  id="login-form" className={`${loginSuccesfull}`}>
             <div>
                 <label htmlFor="username">Username</label>
                 <input type="text" name="username" id="username" value={userName}  onChange={(e) => setUsername(e.target.value)} />

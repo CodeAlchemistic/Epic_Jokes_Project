@@ -117,9 +117,6 @@ interface RatingUpdateDto {
 
 
 
-
-
-
     return (
        <>
            {message && <p>{message}</p>}

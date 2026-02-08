@@ -13,9 +13,11 @@ import Login from "./Pages/Login.tsx";
 import {AuthProvider} from "./Modules/Contexts/AuthContext.tsx";
 
 
+
 function App() {
   return (
       <>
+          <AuthProvider>
           <div>
               <NavBar />
               <Routes>
@@ -35,6 +37,7 @@ function App() {
           <div>
               <Footer></Footer>
           </div>
+          </AuthProvider>
       </>
 
   )

@@ -50,3 +50,18 @@ form > div {
 
     margin-top: 10px;
 }
+
+.successfull {
+    border: 5px solid #00b300;
+}
+
+.unsuccessfull {
+    border: 5px solid darkred;
+}
+
+
+#redirect-to-login {
+    text-decoration: underline;
+    color: #04aef3;
+    margin: 50px;
+}

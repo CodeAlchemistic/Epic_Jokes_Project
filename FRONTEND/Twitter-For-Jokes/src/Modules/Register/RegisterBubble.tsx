@@ -8,9 +8,19 @@ function RegisterBubble() {
     const [showNotif, setShowNotif] = useState(false);
     const [showPasswordNotif, setShowPasswordNotif] = useState(false);
     const [showPasswordMatchingNotif, setShowPasswordMatchingNotif] = useState(false);
+    const [registerSuccesfull, setRegisterSuccesfull] = useState("");
+    const [confirm, setConfirm] = useState(false);
+    const [showAllradyExisting, setShowAllradyExisting] = useState(false);
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        setRegisterSuccesfull("");
+        setConfirm(false);
+        setShowNotif(false);
+        setShowPasswordNotif(false);
+        setShowPasswordMatchingNotif(false);
+        setShowAllradyExisting(false);
+
 
         if (userName.trim() === "" || password.trim() === "") {
             setShowNotif(true);
@@ -19,10 +29,12 @@ function RegisterBubble() {
 
         if (password.length < 8) {
             setShowPasswordNotif(true);
+            return;
 
         }
         if (password != passwordAgain) {
             setShowPasswordMatchingNotif(true)
+            return;
         }
         //setShowNotif(false);
 
@@ -39,9 +51,20 @@ function RegisterBubble() {
         }).then(response =>{
             if (response.ok) {
                 console.log(response);
+
+                setUserName("");
+                setpassword("");
+                setPasswordAgain("");
+
+                setRegisterSuccesfull("successfull");
+                setConfirm(true);
+
             }
-            else{
+            else if (response.status === 400) {
                 console.log(response);
+                setConfirm(false);
+                setRegisterSuccesfull("unsuccessfull");
+                setShowAllradyExisting(true)
             }
         } )
     }
@@ -49,7 +72,7 @@ function RegisterBubble() {
     return (
         <>
             <h1>Create account</h1>
-            <form id="register-form" onSubmit={handleSubmit}>
+            <form id="register-form" onSubmit={handleSubmit} className={`${registerSuccesfull}`}>
                 <div>
                     <label htmlFor="username">Username</label>
                     <input id="username" type="text" name="username" value={userName} onChange={(e) => setUserName(e.target.value)} />

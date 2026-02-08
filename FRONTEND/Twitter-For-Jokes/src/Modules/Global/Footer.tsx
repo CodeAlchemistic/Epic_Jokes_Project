@@ -1,4 +1,8 @@
 import './Footer.css'
+import UselessText from "../Auxiliary/UslesText.tsx";
+
+
+
 
 function Footer() {
     return (
@@ -11,6 +15,7 @@ function Footer() {
                     <li>email: example@tfjokes.cz</li>
                     <li>headquarters: Prague, Prosek</li>
                 </ul>
+               <UselessText></UselessText>
             </div>
           </footer>
 
