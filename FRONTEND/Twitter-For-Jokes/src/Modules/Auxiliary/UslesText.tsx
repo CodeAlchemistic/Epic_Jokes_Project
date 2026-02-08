@@ -6,7 +6,7 @@ export default function UselessText() {
 
     /*const isAuthenticated = user?.user?.isAuthenticated;*/
 
-    if (user.user?.isAuthenticated === true) {
+    if (user.user?.isAuthenticated == false) {
         return (
             <div>
                 <p>Nesnáším React (protože nejsem přihlášen)</p>
@@ -14,6 +14,9 @@ export default function UselessText() {
         )
     }else {
        return( <>
+               <div>
+                   <p>Jsem Konečně přihlášen</p>
+               </div>
         </>
        )
     }

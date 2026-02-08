@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
 
 interface User {
     isAuthenticated: boolean;
@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
-        const res = fetch('http://localhost:65451/api/Authentication/this', {
+         fetch('http://localhost:65451/api/Authentication/this', {
             method: 'GET',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' }
@@ -25,8 +25,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             .then((data: User) => {
                 setUser(data)
             })
-
-
     }, []);
 
     return (
@@ -36,10 +34,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (!context) {
-        throw new Error('useAuth musí být použit uvnitř AuthProvideru');
+        throw new Error('');
     }
     return context;
 };
