@@ -2,7 +2,7 @@
 import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
 
-import {convertStringFromInput} from "./../Auxiliary/AuxiliaryFunctions.ts";
+import {convertStringFromInput} from "../Auxiliary/AuxiliaryFunctions.tsx";
 
 interface Joke {
     jokeId: number;

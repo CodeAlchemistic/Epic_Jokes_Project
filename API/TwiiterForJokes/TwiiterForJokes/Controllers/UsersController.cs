@@ -45,18 +45,27 @@ public class UsersController : Controller
     [HttpPost]
     public async Task<ActionResult<Usr>> CreateUser(CreateUserDto dto)
     {
+        
+
+        Usr? teoreticUser = _context.Users.FirstOrDefault(u => u.UserName == dto.UserName);
+
+        if (teoreticUser != null)
+        {
+            return BadRequest("This user already exists.");
+        }
+
         Usr usr = new Usr
         {
             UserName = dto.UserName,
             Password = dto.Password
         };
 
+
+
         _context.Users.Add(usr);
         await _context.SaveChangesAsync();
 
         return Ok(usr);
-        
-
            
     }
 }

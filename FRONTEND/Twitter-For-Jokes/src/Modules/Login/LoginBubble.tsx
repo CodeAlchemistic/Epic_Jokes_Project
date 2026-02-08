@@ -1,8 +1,16 @@
-import {useState} from "react";
+import React, {useState} from "react";
+import {useLoginStatus} from "../Auxiliary/AuxiliaryFunctions.tsx";
+import {useAuth} from "../Contexts/AuthContext.tsx";
 
 function LoginBubble() {
     const [userName, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [loginSuccesfull, setLoginSuccesfull] = useState("");
+    const [errorNotification, setErrorNotification] = useState(false);
+    const [confirm, showConfirm] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const loggedInStatus = useLoginStatus();
+    const {user} = useAuth()
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -22,6 +30,10 @@ function LoginBubble() {
                 console.log(response);
             }else{
                 console.log(response);
+                showConfirm(false);
+                setErrorNotification(true);
+                setLoginSuccesfull("unsuccessfull");
+                setIsLoggedIn(false);
             }
         })
 
@@ -40,6 +52,8 @@ function LoginBubble() {
             </div>
             <button type="submit">Login</button>
         </form>
+            {confirm && (<p className="confirm-message">Login was successfull</p>)}
+            {errorNotification && (<p className="error_message">Your password or username is incorrect</p>)}
         </>
     )
 }

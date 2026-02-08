@@ -24,3 +24,20 @@ form > div {
 
     cursor: pointer;
 }
+
+
+.confirm-message {
+    text-align: center;
+    margin-top: 10px;
+    color: #00b300;
+    font-style: italic;
+}
+
+
+.successfull {
+    border: 5px solid #00b300;
+}
+
+.unsuccessfull {
+    border: 5px solid darkred;
+}

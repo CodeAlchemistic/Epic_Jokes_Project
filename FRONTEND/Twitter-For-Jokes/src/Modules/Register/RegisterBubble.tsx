@@ -1,5 +1,4 @@
-import {useState} from "react";
-
+import React, {useState} from "react";
 /*validation NEED TO BE ADDED: any of inputs cannot be empty; the username must not already exist*/
 
 function RegisterBubble() {
@@ -75,6 +74,9 @@ function RegisterBubble() {
             {showPasswordMatchingNotif && (
                 <p id="password-matching-notif" className="visit this_error_message">Password are not matching</p>
             )}
+
+            {confirm && (<p className="confirm-message">Registration was successful</p> )}
+            {showAllradyExisting && (<p className="visit this_error_message">This user allredy exists. Chose a diffrent name.</p>)}
         </>
     );
 

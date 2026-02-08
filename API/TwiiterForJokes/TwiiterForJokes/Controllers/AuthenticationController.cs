@@ -5,6 +5,9 @@ using TwiiterForJokes.Context;
 using Microsoft.EntityFrameworkCore;
 using TwiiterForJokes.JwtSranda;
 using TwiiterForJokes.DtoEntities;
+using TwiiterForJokes.Entitys;
+using Microsoft.AspNetCore.Mvc.Routing;
+using System.Security.Claims;
 
 namespace TwiiterForJokes.Controllers
 {
@@ -46,6 +49,23 @@ namespace TwiiterForJokes.Controllers
 
         }
 
+
+
+        [HttpGet("this")]
+        [Authorize]
+        public IActionResult Ask()
+        {
+            var usrId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                    ?? User.FindFirstValue("sub");  //sub claim 
+
+
+            var username = User.Identity?.Name
+                    ?? User.FindFirstValue(ClaimTypes.Name)
+                    ?? User.FindFirstValue("unique_name"); //unique_name claim
+
+            return Ok(new { isAuthenticated = true, usrId, username });
+
+        }
 
     }
 }

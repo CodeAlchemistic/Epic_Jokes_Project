@@ -22,7 +22,7 @@ namespace TwiiterForJokes.JwtSranda
             {
                 Subject = new ClaimsIdentity([
                     new Claim(JwtClaimNames.Sub, user.UsrId.ToString()),
-                    new Claim(JwtClaimNames.Sub, user.UserName.ToString())
+                    new Claim(JwtClaimNames.UniqueName, user.UserName.ToString())
                     
                 ]),
 
