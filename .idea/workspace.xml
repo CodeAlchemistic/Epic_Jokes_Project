@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e311d6ca-1cba-4a5b-ba93-975e5e885236" name="Changes" comment="">
+    <list default="true" id="e311d6ca-1cba-4a5b-ba93-975e5e885236" name="Changes" comment="mega update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/AuthenticationController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/JwtSranda/TokenProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/JwtSranda/TokenProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Register/RegisterBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Register/RegisterBubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Register.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/main.css" afterDir="false" />
-    </list>
-    <list id="793d5113-1158-4a6e-a24a-ac883ab35b05" name="Changes by vojta" comment="">
-      <change afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Auxiliary/UslesText.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Contexts/AuthContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Auxiliary/AuxiliaryFunctions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Auxiliary/AuxiliaryFunctions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Global/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Global/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Auxiliary/UslesText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Auxiliary/UslesText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Contexts/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Contexts/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Global/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Global/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Register/RegisterBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Register/RegisterBubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,57 +42,6 @@
     &quot;accountId&quot;: &quot;2a9dda40-750f-4578-9d9f-24069c2ad3c1&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Register.tsx">
-      <ranges>
-        <range start1="1" end1="1" start2="1" end2="2" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-        <range start1="2" end1="2" start2="3" end2="5" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="5" end1="8" start2="8" end2="16" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-        <range start1="11" end1="12" start2="19" end2="20" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="3" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-        <range start1="5" end1="5" start2="7" end2="13" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-        <range start1="8" end1="8" start2="16" end2="19" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="14" end1="15" start2="25" end2="26" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="22" end1="22" start2="33" end2="40" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="24" end1="24" start2="42" end2="46" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-        <range start1="28" end1="28" start2="50" end2="52" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="31" end1="32" start2="55" end2="56" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="42" end1="42" start2="66" end2="68" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Register/RegisterBubble.tsx">
-      <ranges>
-        <range start1="0" end1="2" start2="0" end2="1" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-        <range start1="11" end1="11" start2="10" end2="13" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="14" end1="14" start2="16" end2="23" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="22" end1="22" start2="31" end2="32" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="26" end1="26" start2="36" end2="37" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="42" end1="42" start2="53" end2="61" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="43" end1="44" start2="62" end2="63" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="45" end1="45" start2="64" end2="67" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="52" end1="53" start2="74" end2="75" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="77" end1="77" start2="99" end2="102" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx">
-      <ranges>
-        <range start1="4" end1="5" start2="4" end2="5" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-        <range start1="117" end1="120" start2="117" end2="117" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/App.tsx">
-      <ranges>
-        <range start1="12" end1="12" start2="12" end2="14" changelist="e311d6ca-1cba-4a5b-ba93-975e5e885236" />
-        <range start1="13" end1="13" start2="15" end2="16" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="16" end1="16" start2="19" end2="20" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-        <range start1="35" end1="35" start2="39" end2="40" changelist="793d5113-1158-4a6e-a24a-ac883ab35b05" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -125,7 +57,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Frontend-AuthorizedUserView&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomas/Desktop/Epic_Jokes_Project&quot;,
@@ -159,8 +91,27 @@
       <workItem from="1769099565113" duration="114000" />
       <workItem from="1770023059234" duration="2864000" />
       <workItem from="1770487102649" duration="4988000" />
-      <workItem from="1770555788809" duration="13132000" />
+      <workItem from="1770555788809" duration="13269000" />
+      <workItem from="1770572445899" duration="10000" />
+      <workItem from="1770572465509" duration="4985000" />
     </task>
+    <task id="LOCAL-00001" summary="mega update">
+      <option name="closed" value="true" />
+      <created>1770570078011</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1770570078011</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changes by vojta">
+      <option name="closed" value="true" />
+      <created>1770570100077</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770570100077</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,5 +127,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="mega update" />
+    <MESSAGE value="Changes by vojta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by vojta" />
   </component>
 </project>

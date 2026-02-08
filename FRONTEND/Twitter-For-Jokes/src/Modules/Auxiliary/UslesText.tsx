@@ -9,11 +9,15 @@ export default function UselessText() {
     if (user.user?.isAuthenticated === true) {
         return (
             <div>
-                <p>Nesnáším React (protože nejsem přihlášen)</p>
+                <p>Jsem přihlášen</p>
             </div>
         )
     }else {
        return( <>
+               <div>
+                    <p>Nejsem přihlášen</p>
+               </div>
+
         </>
        )
     }

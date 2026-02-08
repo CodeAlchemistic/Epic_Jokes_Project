@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
-        const res = fetch('http://localhost:65451/api/Authentication/this', {
+            fetch('http://localhost:65451/api/Authentication/this', {
             method: 'GET',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' }
