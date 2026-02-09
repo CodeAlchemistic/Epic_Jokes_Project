@@ -11,6 +11,7 @@ import Creators from "./Pages/Creators.tsx";
 import Register from "./Pages/Register.tsx";
 import Login from "./Pages/Login.tsx";
 import {AuthProvider} from "./Modules/Contexts/AuthContext.tsx";
+import {Toaster} from "react-hot-toast";
 
 
 
@@ -18,6 +19,12 @@ function App() {
   return (
       <>
           <AuthProvider>
+               <div>
+                   <Toaster
+                    position="top-left"
+                    reverseOrder={false}
+                   />
+               </div>
           <div>
               <NavBar />
               <Routes>

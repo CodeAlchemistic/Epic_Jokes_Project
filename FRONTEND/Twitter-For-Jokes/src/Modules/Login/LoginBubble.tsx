@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import toast from "react-hot-toast";
 
 function LoginBubble() {
     const [userName, setUsername] = useState("");
@@ -6,7 +7,6 @@ function LoginBubble() {
     const [loginSuccesfull, setLoginSuccesfull] = useState("");
     const [errorNotification, setErrorNotification] = useState(false);
     const [confirm, showConfirm] = useState(false);
-
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -33,12 +33,16 @@ function LoginBubble() {
                 showConfirm(true);
                 setLoginSuccesfull("successfull");
 
+                toast.success("Login successfull");
 
             }else{
                 console.log(response);
                 showConfirm(false);
                 setErrorNotification(true);
                 setLoginSuccesfull("unsuccessfull");
+
+                toast.error("Login failed");
+
 
             }
         })
