@@ -24,7 +24,7 @@ function LoginBubble() {
             headers: {'content-type': 'application/json'},
             body: JSON.stringify(user),
             credentials: "include",
-        }).then(response => {
+        }).then(async (response) => {
             if (response.ok) {
                 console.log(response);
 
@@ -34,6 +34,10 @@ function LoginBubble() {
                 setLoginSuccesfull("successfull");
 
                 toast.success("Login successfull");
+
+                const data = await response.json();
+                localStorage.setItem("secureToken", data.token);
+
 
             }else{
                 console.log(response);

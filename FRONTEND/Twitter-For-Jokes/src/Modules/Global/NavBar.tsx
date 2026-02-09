@@ -2,7 +2,7 @@
 import logoImg from '../../assets/Logo.png';
 import './NavBar.css';
 import {useAuth} from "../Contexts/AuthContext.tsx";
-import pfpPicture from "../../assets/DeffUsrPic.jpg"
+import pfpPicture from "../../assets/usr_icon.png"
 import logoutImg from '../../assets/Logout.png';
 
 function Nav() {
@@ -19,7 +19,7 @@ function Nav() {
 
                     <nav className="main-navbar">
                         <div className="tfj-bar">
-                            <div><img src={pfpPicture} alt=""/> <p>`${user.userName}`</p></div>
+                            <div><img src={pfpPicture} alt="" id="user-icon-nav-bar"/> <p>{user.userName}</p></div>
                             <Link to="/Creators">Creators</Link>
                             <Link className="" to="/">
                                 <img src={logoImg} alt="Logo" />

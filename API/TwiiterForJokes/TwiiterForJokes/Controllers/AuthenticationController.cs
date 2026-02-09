@@ -45,7 +45,7 @@ namespace TwiiterForJokes.Controllers
 
             Response.Cookies.Append("secureToken", token, cookieOptions);
             
-            return Ok(new { message = "Login Sicsesfull" });
+            return Ok(new { message = "Login Sicsesfull", token });
 
         }
 

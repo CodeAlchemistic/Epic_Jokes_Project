@@ -1,4 +1,4 @@
-﻿import React, {useState} from 'react'
+﻿import React, { useState} from 'react'
 import './JokePostBubble.css'
 import {useAuth} from "../Contexts/AuthContext.tsx";
 import {Link} from "react-router-dom";
@@ -9,7 +9,7 @@ function JokePostBubble() {
     const [rating, setRating] = useState('');
 
     const postJoke = (e: React.FormEvent) => {
-        e.preventDefault()
+        e.preventDefault();
 
         /* if statement to show error message to the user during creation of joke if any of these is empty*/
         if (jokeContent.trim() === "" || rating === "") {
@@ -19,10 +19,9 @@ function JokePostBubble() {
 
         setShowError(false);
 
-        const user = useAuth();
+        const token = localStorage.getItem("secureToken");
 
         const jokeToPost = {
-            usrId: 1, //Temp user id, registratoron reqired after probably global varialbe
             jokeContent: jokeContent,
             rating: rating
         }
@@ -31,10 +30,11 @@ function JokePostBubble() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                ...(token ? { Authorization: `Bearer ${token}` } : {})
             },
             body: JSON.stringify(jokeToPost),
         })
-            .then(response => {
+            .then(async (response) => {
                 if (!response.ok && jokeContent === null || rating === null) {
                     console.log(response, "nic není ok")
                     setJokeContent('');
@@ -42,6 +42,22 @@ function JokePostBubble() {
                     window.location.reload();
                     console.log(response, "Vše OK")
                 }
+
+                if (response.status === 401) {
+                    setShowError(true);
+                    console.log("Nejsi přihlášený");
+                    return;
+                }
+
+                if (!response.ok) {
+                    const text = await response.text();
+                    setShowError(true);
+                    console.log("Api chyba", text);
+                    return;
+                }
+                setShowError(false);
+                setJokeContent('');
+
             })
         .catch(error => console.log(error));
 

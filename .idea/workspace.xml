@@ -8,6 +8,22 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/AuthenticationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Global/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Global/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Global/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Global/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Login/LoginBubble.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/jokes-for-twitter/vite.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +76,13 @@
     "git-widget-placeholder": "Frontend-AuthorizedUserView",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "C:/Users/SobotkaTomas/Desktop/Epic_Jokes_Project",
+    "last_opened_file_path": "C:/Users/Tomas/Desktop/Epic_Jokes_Project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\Tomas\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -79,7 +95,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -99,6 +115,8 @@
       <workItem from="1770627684626" duration="17000" />
       <workItem from="1770627715960" duration="2492000" />
       <workItem from="1770632460157" duration="942000" />
+      <workItem from="1770656315752" duration="5000" />
+      <workItem from="1770656330363" duration="9479000" />
     </task>
     <task id="LOCAL-00001" summary="mega update">
       <option name="closed" value="true" />
