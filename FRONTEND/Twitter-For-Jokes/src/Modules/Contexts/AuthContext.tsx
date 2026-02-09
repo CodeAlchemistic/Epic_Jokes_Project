@@ -25,9 +25,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             .then(res => res.json())
             .then((data: User) => {
                 setUser(data)
+                console.log(data)
             })
-
-
     }, []);
 
      const logOut = async () => {
@@ -51,10 +50,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (!context) {
         throw new Error('useAuth musí být použit uvnitř AuthProvideru');
     }
+
     return context;
 };

@@ -1,7 +1,10 @@
 import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 
+
 function LoginBubble() {
+    const navigate = useNavigate();
     const [userName, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loginSuccesfull, setLoginSuccesfull] = useState("");
@@ -32,9 +35,9 @@ function LoginBubble() {
                 setPassword("")
                 showConfirm(true);
                 setLoginSuccesfull("successfull");
-
                 toast.success("Login successfull");
 
+                navigate("/feed");
             }else{
                 console.log(response);
                 showConfirm(false);

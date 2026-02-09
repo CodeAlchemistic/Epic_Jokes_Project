@@ -19,16 +19,16 @@ function JokePostBubble() {
 
         setShowError(false);
 
-        const user = useAuth();
 
         const jokeToPost = {
-            usrId: 1, //Temp user id, registratoron reqired after probably global varialbe
+           // usrId: 1, //Temp user id, registratoron reqired after probably global varialbe
             jokeContent: jokeContent,
             rating: rating
         }
 
         fetch('http://localhost:65451/api/Jokes', {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -39,8 +39,8 @@ function JokePostBubble() {
                     console.log(response, "nic není ok")
                     setJokeContent('');
                 } else{
-                    window.location.reload();
                     console.log(response, "Vše OK")
+
                 }
             })
         .catch(error => console.log(error));

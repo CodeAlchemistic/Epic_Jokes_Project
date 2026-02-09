@@ -3,6 +3,7 @@ import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
 
 import {convertStringFromInput} from "../Auxiliary/AuxiliaryFunctions.tsx";
+import {useAuth} from "../Contexts/AuthContext.tsx";
 
 interface Joke {
     jokeId: number;
@@ -25,11 +26,13 @@ interface RatingUpdateDto {
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        fetch('http://localhost:65451/api/Jokes')
-            .then(response => response.json())
-            .then((resalt: Joke[]) => setData(resalt));
-    }, []);
+    const user = useAuth()
+
+        useEffect(() => {
+            fetch('http://localhost:65451/api/Jokes')
+                .then(response => response.json())
+                .then((resalt: Joke[]) => setData(resalt));
+        }, []);
 
 
     const toggleForm = (id: number) => {
@@ -143,9 +146,12 @@ interface RatingUpdateDto {
                 </div>
             </div>
 
+            { Joke.authorName === user.user?.userName ? (
             <button className="delete_btn" onClick={() => onDelete(Joke.jokeId)}>
                 Delete joke
             </button>
+            ):(<></>)}
+
         </div>
            ))}
        </>
