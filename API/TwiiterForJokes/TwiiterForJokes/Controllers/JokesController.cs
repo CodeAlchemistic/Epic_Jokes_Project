@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Eventing.Reader;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Asn1;
@@ -41,17 +42,23 @@ namespace TwiiterForJokes.Controllers
         public async Task<ActionResult<Joke>> CreateJoke(CreateJokeDto dto)
         {
 
+            var usrIdclaim = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                             ?? User.FindFirstValue("sub");
+
+
+            int usrId = int.Parse(usrIdclaim);
+
 
             //dto data assignment into DB 
             var joke = new Joke
             {
-                UsrId = dto.UsrId,
+                UsrId = usrId,
                 JokeContent = dto.JokeContent,
                 Rating = dto.Rating
             };
 
             //usrId validation if the user really exists in the Db
-            var realUser = await _context.Users.AnyAsync(u => u.UsrId == dto.UsrId);
+            var realUser = await _context.Users.AnyAsync(u => u.UsrId == joke.UsrId);
             if (!realUser)
             {
                 return BadRequest("User probably does not exist LOL. In other words: you're too stupid to proccess it correctlly :-D");
