@@ -19,6 +19,8 @@ function JokePostBubble() {
 
         setShowError(false);
 
+        const user = useAuth();
+
         const jokeToPost = {
             usrId: 1, //Temp user id, registratoron reqired after probably global varialbe
             jokeContent: jokeContent,
