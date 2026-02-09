@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect,  type ReactNode } from 'react';
 
 interface User {
     isAuthenticated: boolean;
@@ -8,6 +8,7 @@ interface User {
 
 interface AuthContextType {
     user: User | null;
+    logOut: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -29,8 +30,22 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     }, []);
 
+     const logOut = async () => {
+        const response = await fetch('http://localhost:65451/api/Authentication/logout', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {'Content-Type': 'application/json'}
+        })
+        if (response.ok) {
+            setUser(null);
+        }
+        else{
+            console.error('Unable to log in');
+            console.log(response);
+        }
+    }
     return (
-        <AuthContext.Provider value={{ user, }}>
+        <AuthContext.Provider value={{ user, logOut }}>
             {children}
         </AuthContext.Provider>
     );

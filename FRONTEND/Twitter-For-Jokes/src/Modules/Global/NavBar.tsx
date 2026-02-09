@@ -2,12 +2,13 @@
 import logoImg from '../../assets/Logo.png';
 import './NavBar.css';
 import {useAuth} from "../Contexts/AuthContext.tsx";
-
+import pfpPicture from "../../assets/DeffUsrPic.jpg"
+import logoutImg from '../../assets/Logout.png';
 
 function Nav() {
-    const user = useAuth();
+    const {user, logOut} = useAuth();
 
-    if (user.user?.isAuthenticated === true) {
+    if (user?.isAuthenticated === true) {
         return (
             <>
                 <header>
@@ -18,11 +19,13 @@ function Nav() {
 
                     <nav className="main-navbar">
                         <div className="tfj-bar">
+                            <div><img src={pfpPicture} alt=""/> <p>`${user.userName}`</p></div>
                             <Link to="/Creators">Creators</Link>
                             <Link className="" to="/">
                                 <img src={logoImg} alt="Logo" />
                             </Link>
                             <Link to="/feed">Jokes</Link>
+                            <img src={logoutImg} alt="" id="Logout" onClick={logOut} />
                             {/*<Link to="/playground">PlayGround</Link>*/}
                         </div>
                     </nav>
