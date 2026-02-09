@@ -3,7 +3,11 @@ import './JokePostBubble.css'
 import {useAuth} from "../Contexts/AuthContext.tsx";
 import {Link} from "react-router-dom";
 
-function JokePostBubble() {
+interface JokePostBubbleProps {
+    onJokePosted: () => void;
+}
+
+function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
 
     const [jokeContent, setJokeContent] = useState('');
     const [rating, setRating] = useState('');
@@ -21,7 +25,6 @@ function JokePostBubble() {
 
 
         const jokeToPost = {
-           // usrId: 1, //Temp user id, registratoron reqired after probably global varialbe
             jokeContent: jokeContent,
             rating: rating
         }
@@ -35,9 +38,11 @@ function JokePostBubble() {
             body: JSON.stringify(jokeToPost),
         })
             .then(response => {
-                if (!response.ok && jokeContent === null || rating === null) {
+                if (response.ok) {
                     console.log(response, "nic není ok")
                     setJokeContent('');
+                    setRating('');
+                    onJokePosted();
                 } else{
                     console.log(response, "Vše OK")
 
