@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import {useLoginStatus} from "../Auxiliary/AuxiliaryFunctions.tsx";
-import {useAuth} from "../Contexts/AuthContext.tsx";
+import toast from "react-hot-toast";
 
 function LoginBubble() {
     const [userName, setUsername] = useState("");
@@ -8,9 +7,6 @@ function LoginBubble() {
     const [loginSuccesfull, setLoginSuccesfull] = useState("");
     const [errorNotification, setErrorNotification] = useState(false);
     const [confirm, showConfirm] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const loggedInStatus = useLoginStatus();
-    const {user} = useAuth()
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -36,14 +32,18 @@ function LoginBubble() {
                 setPassword("")
                 showConfirm(true);
                 setLoginSuccesfull("successfull");
-                setIsLoggedIn(true);
+
+                toast.success("Login successfull");
 
             }else{
                 console.log(response);
                 showConfirm(false);
                 setErrorNotification(true);
                 setLoginSuccesfull("unsuccessfull");
-                setIsLoggedIn(false);
+
+                toast.error("Login failed");
+
+
             }
         })
 
