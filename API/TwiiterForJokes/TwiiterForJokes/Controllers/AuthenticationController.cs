@@ -67,5 +67,22 @@ namespace TwiiterForJokes.Controllers
 
         }
 
+        [Authorize]
+        [HttpPost("logout")]
+        public async Task<ActionResult> Logout()
+        {
+            var cookieOption = new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Strict,
+                Expires = DateTime.UtcNow.AddHours(24)
+            };
+
+            Response.Cookies.Delete("secureToken", cookieOption);
+
+
+            return Ok(new { message = "Logout was successful" });
+        }
     }
 }

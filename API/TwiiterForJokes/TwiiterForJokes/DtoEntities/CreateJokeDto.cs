@@ -11,7 +11,7 @@
         /// TEMPORARY attribute
         /// Is going to be deleted and unavaliable to create and transfer from user interface in future
         /// </summary>
-        public int UsrId { get; set; }
+        //public int UsrId { get; set; }
         public string JokeContent { get; set; }
         public int Rating { get; set; }
     }
