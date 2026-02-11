@@ -36,6 +36,29 @@ namespace TwiiterForJokes.Controllers
             return Ok(allJokes);
         }
 
+        [HttpGet
+            ("{id}")]
+        public async Task<ActionResult<Joke>> GetJokeById(int id)
+        {
+            var joke = await _context.Jokes.FindAsync(id);
+
+            if (joke == null)
+            {
+                return NotFound("This joke does not exist bro.");
+            }
+            else
+            {
+               GetJokeDto jokeToSend = new GetJokeDto();
+               jokeToSend.JokeId = joke.JokeId;
+               jokeToSend.JokeContent = joke.JokeContent;
+               jokeToSend.Rating = joke.Rating;
+               jokeToSend.AuthorName = _context.Users.FirstOrDefault(u => u.UsrId == joke.UsrId)?.UserName!;
+
+               return Ok(jokeToSend);
+            }
+
+
+        }
 
 
         [HttpPost]

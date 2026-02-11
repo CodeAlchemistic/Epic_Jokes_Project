@@ -15,6 +15,8 @@ namespace TwiiterForJokes.Entitys
         public int UsrId { get; set; }
         [ForeignKey(nameof(UsrId))]
 
+        public Usr?  Usr { get; set; }
+
         [Column("joke_id")]
         public int JokeId { get; set; }
         [ForeignKey(nameof(JokeId))]

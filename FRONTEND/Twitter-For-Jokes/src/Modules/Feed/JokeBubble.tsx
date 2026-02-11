@@ -4,6 +4,7 @@ import './JokeBubble.css';
 
 import { convertStringFromInput } from "../Auxiliary/AuxiliaryFunctions.tsx";
 import { useAuth } from "../Contexts/AuthContext.tsx";
+import {Link} from "react-router-dom";
 
 
 interface Joke {
@@ -110,6 +111,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                                 Rating: {joke.rating}/10
                             </p>
                             <p className="info_notif">click on 'Rating' to change</p>
+                                <Link to={`/feed/detail/${joke.jokeId}`}>Detail</Link>
                         </div>
 
                         {/* Formulář pro změnu ratingu - zobrazí se jen pro aktivní vtip */}

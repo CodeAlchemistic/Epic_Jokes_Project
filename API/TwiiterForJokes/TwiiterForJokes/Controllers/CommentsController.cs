@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TwiiterForJokes.Context;
 using TwiiterForJokes.DtoEntities;
@@ -17,44 +19,57 @@ namespace TwiiterForJokes.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<Comment>>> GetAllComments()
+        [HttpGet("{jokeId}")]
+        public async Task<ActionResult<List<Comment>>> GetAllCommentsForJoke(int jokeId)
         {
-            var allComments = await _context.Comments.ToListAsync();
-            return Ok(allComments);
+            var commentsForJoke = await _context.Comments.Where(comment => comment.JokeId == jokeId).Select(comment => new GetAllCommentsForJoke()
+            {
+                CommentId = comment.CommentId,
+                AuthorName = comment.Usr!.UserName,
+                CommentContent = comment.CommentContent
+            }).ToListAsync();
+
+            return Ok(commentsForJoke);
         }
 
 
-
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Comment>> CommentJoke(CreateCommentDto dto)
         {
+            var usrIdclaim = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirstValue("sub");
+
+
+            int usrId = int.Parse(usrIdclaim);
+
             var comment = new Comment
             {
-                UsrId = dto.UsrId,
+                UsrId =  usrId,
                 JokeId = dto.JokeId,
                 CommentContent = dto.CommentContent
             };
 
             var realJoke = await _context.Jokes.AnyAsync(c => c.JokeId == dto.JokeId);
-            var realUser = await _context.Users.AnyAsync(u => u.UsrId == dto.UsrId);
+            /*
+            var realUser = await _context.Users.AnyAsync(u => u.UsrId == );
 
             if (!realJoke && !realUser)
             {
                 return BadRequest("user neither joke does not exist.");
             }
+            */
 
             if (!realJoke)
             {
                 return BadRequest("This joke does not exist bro.");
             }
 
-            
+            /*
             if (!realUser)
             {
                 return BadRequest("This user does not exist bro.");
             }
-
+            */
             
 
 

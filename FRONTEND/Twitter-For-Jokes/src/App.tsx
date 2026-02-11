@@ -12,6 +12,7 @@ import Register from "./Pages/Register.tsx";
 import Login from "./Pages/Login.tsx";
 import {AuthProvider} from "./Modules/Contexts/AuthContext.tsx";
 import {Toaster} from "react-hot-toast";
+import JokeDetailPage from "./Pages/JokeDetailPage.tsx";
 
 
 
@@ -41,6 +42,11 @@ function App() {
                   <Route path="/playground" element={<PlayGround />} />
               </Routes>
           </div>
+              <div>
+                  <Routes>
+                      <Route path="/feed/Detail/:id" element={<JokeDetailPage />}>Detail</Route>
+                  </Routes>
+              </div>
           <div>
               <Footer></Footer>
           </div>
