@@ -2,11 +2,12 @@
 
 interface CommentPostBubbleProps {
     jokeId: string;
+    fatchComments: () => void;
 }
 
 
 
-const CommentPostBubble = ({ jokeId }: CommentPostBubbleProps)=> {
+const CommentPostBubble = ({ jokeId, fatchComments }: CommentPostBubbleProps)=> {
     const [commentContent, setCommentContent] = useState<string>('');
 
     const commentToSend = {
@@ -26,6 +27,8 @@ const CommentPostBubble = ({ jokeId }: CommentPostBubbleProps)=> {
             if (res.ok) {
                 console.log(res)
                 console.log("Successfully sent");
+                setCommentContent("")
+                fatchComments()
             }else {
                 console.log(res)
                 console.log("Failed");

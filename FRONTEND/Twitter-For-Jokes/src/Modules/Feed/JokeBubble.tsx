@@ -58,8 +58,8 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
             .then(response => {
                 if (response.ok) {
                     console.log("Rating aktualizován");
-                    setActiveJokeId(null); // Zavřeme formulář
-                    refreshJokes();        // <--- Místo reloadu zavoláme refresh dat!
+                    setActiveJokeId(null);
+                    refreshJokes();
                 } else {
                     console.error("Chyba při updatu ratingu");
                 }

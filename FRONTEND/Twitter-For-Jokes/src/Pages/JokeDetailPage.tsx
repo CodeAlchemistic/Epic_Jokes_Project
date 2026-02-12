@@ -1,5 +1,5 @@
 ﻿import {useParams} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import JokeDisplayBubble from "../Modules/JokeDetailPage/JokeDisplayBubble.tsx";
 import CommentPostBubble from "../Modules/JokeDetailPage/CommentPostBubble.tsx";
 import CommentBubble from "../Modules/JokeDetailPage/CommentBubble.tsx";
@@ -11,10 +11,17 @@ export interface JokeOnDetailPage {
     authorName: string;
 }
 
+interface Comment {
+    commentId: number;
+    authorName: string;
+    commentContent: string;
+}
+
 
 function JokeDetailPage() {
     const {id} = useParams<{id: string}>();
     const [joke, setJoke] = useState<JokeOnDetailPage | null>(null);
+    const [comments, setComments] = useState<Comment[]>([]);
 
         useEffect(() => {
 
@@ -33,13 +40,24 @@ function JokeDetailPage() {
                 })
         }, [id]);
 
+        const fatchComments = useCallback(() => {
+                   fetch(`http://localhost:65451/api/Comments/${id}`, {
+                    method: "GET",
+                    headers: {'Content-Type': 'application/json'},
+                }).then(response => response.json()).then(data => setComments(data));
+            }, [id])
+
+    useEffect(() => {
+        fatchComments();
+    }, [fatchComments]);
+
     return (
         <>
             {joke && <JokeDisplayBubble data={joke} />}
 
-            {id && <CommentPostBubble jokeId={id} />}
+            {id && <CommentPostBubble jokeId={id} fatchComments={fatchComments} />}
 
-            {id && <CommentBubble jokeId={id} />}
+            {id && <CommentBubble jokeId={id} data={comments} fatchComments={fatchComments} />}
         </>
 
     )
