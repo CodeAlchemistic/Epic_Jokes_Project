@@ -1,12 +1,18 @@
 import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
+import {useAuth} from "../Contexts/AuthContext.tsx";
+
 
 function LoginBubble() {
+    const navigate = useNavigate();
+    const {checkAuth} = useAuth();
     const [userName, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [loginSuccesfull, setLoginSuccesfull] = useState("");
     const [errorNotification, setErrorNotification] = useState(false);
     const [confirm, showConfirm] = useState(false);
+
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -26,19 +32,21 @@ function LoginBubble() {
             credentials: "include",
         }).then(async (response) => {
             if (response.ok) {
+                await checkAuth();
+
                 console.log(response);
 
                 setUsername("")
                 setPassword("")
                 showConfirm(true);
                 setLoginSuccesfull("successfull");
-
                 toast.success("Login successfull");
 
                 const data = await response.json();
                 localStorage.setItem("secureToken", data.token);
 
 
+                navigate("/feed");
             }else{
                 console.log(response);
                 showConfirm(false);

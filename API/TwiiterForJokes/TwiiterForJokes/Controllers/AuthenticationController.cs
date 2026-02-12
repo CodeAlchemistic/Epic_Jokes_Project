@@ -59,11 +59,11 @@ namespace TwiiterForJokes.Controllers
                     ?? User.FindFirstValue("sub");  //sub claim 
 
 
-            var username = User.Identity?.Name
+            var userName = User.Identity?.Name
                     ?? User.FindFirstValue(ClaimTypes.Name)
                     ?? User.FindFirstValue("unique_name"); //unique_name claim
 
-            return Ok(new { isAuthenticated = true, usrId, username });
+            return Ok(new { isAuthenticated = true, usrId, userName });
 
         }
 

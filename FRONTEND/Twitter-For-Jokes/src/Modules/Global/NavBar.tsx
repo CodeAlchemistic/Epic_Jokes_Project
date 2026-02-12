@@ -8,6 +8,8 @@ import logoutImg from '../../assets/Logout.png';
 function Nav() {
     const {user, logOut} = useAuth();
 
+    console.log();
+
     if (user?.isAuthenticated === true) {
         return (
             <>
@@ -19,7 +21,7 @@ function Nav() {
 
                     <nav className="main-navbar">
                         <div className="tfj-bar">
-                            <div><img src={pfpPicture} alt="" id="user-icon-nav-bar"/> <p>{user.userName}</p></div>
+                            <div><img src={pfpPicture} alt=""/> <p>{user.userName}</p></div>
                             <Link to="/Creators">Creators</Link>
                             <Link className="" to="/">
                                 <img src={logoImg} alt="Logo" />

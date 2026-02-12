@@ -1,9 +1,14 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿import React, { useState } from 'react';
 import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
 import {Link} from "react-router-dom";
 import {convertStringFromInput} from "../Auxiliary/AuxiliaryFunctions.tsx";
 import {useAuth} from "../Contexts/AuthContext.tsx";
+import './JokeBubble.css';
+
+import { convertStringFromInput } from "../Auxiliary/AuxiliaryFunctions.tsx";
+import { useAuth } from "../Contexts/AuthContext.tsx";
+import {Link} from "react-router-dom";
 
 
 interface Joke {
@@ -13,104 +18,80 @@ interface Joke {
     authorName: string;
 }
 
+
 interface RatingUpdateDto {
     jokeId: number;
     rating: number;
 }
 
-    const JokeBuble: React.FC = () => {
-    const [data, setData] = useState<Joke[]>([]);
+
+interface JokeBubbleProps {
+    jokes: Joke[];
+    refreshJokes: () => void;
+}
+
+const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
+    const { user } = useAuth();
+
+
     const [activeJokeId, setActiveJokeId] = useState<number | null>(null);
-
     const [ratingInput, setRatingInput] = useState<string>("");
-
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        fetch('http://localhost:65451/api/Jokes')
-            .then(response => response.json())
-            .then((resalt: Joke[]) => setData(resalt));
-    }, []);
-
 
     const toggleForm = (id: number) => {
-        if (activeJokeId === id) {
-            setActiveJokeId(null);
-        } else {
-            setActiveJokeId(id);
-        }
-    }
-
-         const updateRating = (e: React.FormEvent, jokeId: number) => {
-         e.preventDefault();
+        setActiveJokeId(activeJokeId === id ? null : id);
+        setRatingInput("");
+    };
 
 
+    const updateRating = (e: React.FormEvent, jokeId: number) => {
+        e.preventDefault();
 
-         const jokeToUpdate: RatingUpdateDto = {
-             jokeId: jokeId,
-             rating: convertStringFromInput(ratingInput),
-         }
+        const jokeToUpdate: RatingUpdateDto = {
+            jokeId: jokeId,
+            rating: convertStringFromInput(ratingInput),
+        };
 
-         fetch(`http://localhost:65451/api/Jokes/${jokeId}/rating`, {
-             method: 'PUT',
-             headers: {'Content-Type': 'application/json'},
-             body: JSON.stringify(jokeToUpdate)
-         }).then(response => {
-                if (!response.ok) {
-                    console.log(response, "nic není ok")
-                } else{
-                    window.location.reload();
-                    console.log(response, "Vše OK")
+        fetch(`http://localhost:65451/api/Jokes/${jokeId}/rating`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(jokeToUpdate)
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Rating aktualizován");
+                    setActiveJokeId(null);
+                    refreshJokes();
+                } else {
+                    console.error("Chyba při updatu ratingu");
                 }
             })
-        .catch(error => console.log(error));
+            .catch(err => console.error(err));
+    };
 
 
-
-
-    }
-
-    /*Function that deletes specific joke*/
-    async function deleteJoke(id: number) {
-        const res = await fetch(`http://localhost:65451/api/Jokes/${id}`, {
-            method: 'DELETE',
-        });
-
-        if (res.status === 404) {
-            throw new Error("Tento vtip neexistuje (404).")
-        }
-
-        if (!res.ok) {
-            const text = await res.text();
-            throw new Error(text || `Chyba při mazání (${res.status}).`);
-        }
-
-
-    }
-    /*Function that runs when the button is clicked*/
-    async function onDelete(id: number) {
+    const onDelete = async (id: number) => {
         if (!window.confirm("Do you really want to delete the joke?")) return;
 
         setMessage(null);
         setError(null);
 
-
         try {
-            await deleteJoke(id);
+            const res = await fetch(`http://localhost:65451/api/Jokes/${id}`, {
+                method: 'DELETE',
+            });
 
-            setData(prev => prev.filter(j => j.jokeId !== id));
-
-            setMessage("Joke was deleted successfully.");
-            /*window.location.reload();*/
-        }
-        catch (e) {
-            if (e instanceof Error) {
-                setError(e.message);
+            if (res.ok) {
+                setMessage("Joke was deleted successfully.");
+                refreshJokes();
+            } else {
+                const text = await res.text();
+                setError(text || "Unable to delete the joke.");
             }
-            else {
-                setError("Unable to delete the joke.");
-            }
+        } catch {
+            setError("Network error occurred while deleting.");
         }
 
 

@@ -3,7 +3,11 @@ import './JokePostBubble.css'
 import {useAuth} from "../Contexts/AuthContext.tsx";
 import {Link} from "react-router-dom";
 
-function JokePostBubble() {
+interface JokePostBubbleProps {
+    onJokePosted: () => void;
+}
+
+function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
 
     const [jokeContent, setJokeContent] = useState('');
     const [rating, setRating] = useState('');
@@ -28,19 +32,22 @@ function JokePostBubble() {
 
         fetch('http://localhost:65451/api/Jokes', {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
                 ...(token ? { Authorization: `Bearer ${token}` } : {})
             },
             body: JSON.stringify(jokeToPost),
         })
-            .then(async (response) => {
-                if (!response.ok && jokeContent === null || rating === null) {
+            .then(response => {
+                if (response.ok) {
                     console.log(response, "nic není ok")
                     setJokeContent('');
+                    setRating('');
+                    onJokePosted();
                 } else{
-                    window.location.reload();
                     console.log(response, "Vše OK")
+
                 }
 
                 if (response.status === 401) {
