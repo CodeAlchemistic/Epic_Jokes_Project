@@ -25,9 +25,9 @@ nav > div {
 
 
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 5%;
+    gap: 30px;
+
 
     padding: 0 5%;
     border-radius: 999px;
@@ -63,8 +63,12 @@ nav > div > a {
 }
 
 #Logout {
-    width: 10%;
-    height: auto;
+    width: 50px;
+    height: 50px;
+
+    cursor: pointer;
 }
 
-
+#user-icon-nav-bar {
+    width: 180px;
+}

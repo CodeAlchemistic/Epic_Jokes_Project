@@ -2,7 +2,7 @@
 import logoImg from '../../assets/Logo.png';
 import './NavBar.css';
 import {useAuth} from "../Contexts/AuthContext.tsx";
-import pfpPicture from "../../assets/DeffUsrPic.jpg"
+import pfpPicture from "../../assets/usr_icon.png"
 import logoutImg from '../../assets/Logout.png';
 
 function Nav() {

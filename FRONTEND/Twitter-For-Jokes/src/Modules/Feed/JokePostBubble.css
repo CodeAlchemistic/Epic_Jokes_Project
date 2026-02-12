@@ -33,7 +33,7 @@ form {
 textarea {
     border: 5px solid white;
     border-radius: 15px;
-    padding: 5px;
+    padding: 10px;
     line-height: 1;
     height: 200px;
 }
@@ -50,6 +50,7 @@ form > div > button {
     color: white;
 
     padding: 0 10px;
+    cursor: pointer;
 }
 
 figcaption {

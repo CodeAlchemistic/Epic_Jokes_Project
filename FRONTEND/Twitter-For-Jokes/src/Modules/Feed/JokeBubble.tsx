@@ -1,5 +1,9 @@
 ﻿import React, { useState } from 'react';
 import usr_icon from './../../assets/usr_icon.png';
+import './JokeBubble.css'
+import {Link} from "react-router-dom";
+import {convertStringFromInput} from "../Auxiliary/AuxiliaryFunctions.tsx";
+import {useAuth} from "../Contexts/AuthContext.tsx";
 import './JokeBubble.css';
 
 import { convertStringFromInput } from "../Auxiliary/AuxiliaryFunctions.tsx";
@@ -89,56 +93,83 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
         } catch {
             setError("Network error occurred while deleting.");
         }
-    };
 
-    return (
-        <>
-            {message && <p className="success-msg">{message}</p>}
-            {error && <p className="error-msg">{error}</p>}
 
-            {jokes.map((joke) => (
-                <div className="bubbleBox" key={joke.jokeId}>
-                    <div className="userInfoBox">
-                        <img src={usr_icon} alt="User" />
-                        <p>{joke.authorName}</p>
-                    </div>
 
-                    <p>{joke.jokeContent}</p>
+    }
 
-                    <div className="ourFlex">
-                        <div className="jokeInfoBox">
-                            <p id="rating" onClick={() => toggleForm(joke.jokeId)}>
-                                Rating: {joke.rating}/10
-                            </p>
-                            <p className="info_notif">click on 'Rating' to change</p>
-                                <Link to={`/feed/detail/${joke.jokeId}`}>Detail</Link>
+    const user = useAuth();
+
+    if (user.user?.isAuthenticated === true) {
+        return (
+            <>
+                {message && <p>{message}</p>}
+                {error && <p>{error}</p>}
+
+                {data.map((Joke) =>(
+                    <div className="bubbleBox" key={Joke.jokeId}>
+
+                        <div className="userInfoBox">
+                            <img src={usr_icon} alt=""/>
+                            <p>{Joke.authorName}</p>
+                        </div>
+                        <p>{Joke.jokeContent}</p>
+                        <div className="ourFlex">
+                            <div className="jokeInfoBox">
+                                <p id="rating" onClick={() => toggleForm(Joke.jokeId)}>Rating: {Joke.rating}/10</p>
+                                <p className="info_notif">click on 'Rating' to change</p>
+                            </div>
+                            <div className={activeJokeId === Joke.jokeId ? "hid active" : "hid"}>
+                                <form className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
+                                    <input min="1" max="10" id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
+                                    <button type="submit" id="submitRate">Change rating</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div className="lower-flex">
+                            <button className="delete_btn" onClick={() => onDelete(Joke.jokeId)}>
+                                Delete joke
+                            </button>
+
+                            <div className="see-comments-box">
+                                <Link to="/JokeComments" className="comment-link">See all comments</Link>
+                            </div>
                         </div>
 
-                        {/* Formulář pro změnu ratingu - zobrazí se jen pro aktivní vtip */}
-                        <div className={activeJokeId === joke.jokeId ? "hid active" : "hid"}>
-                            <form className="ourFlex" onSubmit={(e) => updateRating(e, joke.jokeId)}>
-                                <input
-                                    min="1" max="10"
-                                    id="ratingChange"
-                                    value={ratingInput}
-                                    onChange={(e) => setRatingInput(e.target.value)}
-                                    type="number"
-                                />
-                                <button type="submit" id="submitRate">Change</button>
-                            </form>
+                    </div>
+                ))}
+            </>
+        )
+    }
+    else {
+        return (
+            <>
+                {message && <p>{message}</p>}
+                {error && <p>{error}</p>}
+
+                {data.map((Joke) =>(
+                    <div className="bubbleBox" key={Joke.jokeId}>
+
+                        <div className="userInfoBox">
+                            <img src={usr_icon} alt=""/>
+                            <p>{Joke.authorName}</p>
+                        </div>
+                        <p>{Joke.jokeContent}</p>
+                        <div className="ourFlex">
+                            <div className="jokeInfoBox">
+                                <p id="rating" onClick={() => toggleForm(Joke.jokeId)} style={{cursor: "default"}}>Rating: {Joke.rating}/10</p>
+                                <p className="info_notif">Login to change rating</p>
+                            </div>
+                        </div>
+
+                        <div className="see-comments-box">
+                                <Link to="/JokeComments" className="comment-link">See all comments</Link>
                         </div>
                     </div>
+                ))}
+            </>
+        )
+    }
 
-                    {/* Tlačítko smazat se ukáže jen autorovi vtipu */}
-                    {joke.authorName === user?.userName && (
-                        <button className="delete_btn" onClick={() => onDelete(joke.jokeId)}>
-                            Delete joke
-                        </button>
-                    )}
-                </div>
-            ))}
-        </>
-    );
-};
-
+}
 export default JokeBuble;
