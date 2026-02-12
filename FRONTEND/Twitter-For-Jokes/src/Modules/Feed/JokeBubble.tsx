@@ -1,8 +1,10 @@
 ﻿import React, { useState, useEffect } from 'react';
 import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
-
+import {Link} from "react-router-dom";
 import {convertStringFromInput} from "../Auxiliary/AuxiliaryFunctions.tsx";
+import {useAuth} from "../Contexts/AuthContext.tsx";
+
 
 interface Joke {
     jokeId: number;
@@ -40,7 +42,7 @@ interface RatingUpdateDto {
         }
     }
 
-        const updateRating = (e: React.FormEvent, jokeId: number) => {
+         const updateRating = (e: React.FormEvent, jokeId: number) => {
          e.preventDefault();
 
 
@@ -115,40 +117,78 @@ interface RatingUpdateDto {
 
     }
 
+    const user = useAuth();
 
+    if (user.user?.isAuthenticated === true) {
+        return (
+            <>
+                {message && <p>{message}</p>}
+                {error && <p>{error}</p>}
 
-    return (
-       <>
-           {message && <p>{message}</p>}
-           {error && <p>{error}</p>}
+                {data.map((Joke) =>(
+                    <div className="bubbleBox" key={Joke.jokeId}>
 
-           {data.map((Joke) =>(
-        <div className="bubbleBox" key={Joke.jokeId}>
+                        <div className="userInfoBox">
+                            <img src={usr_icon} alt=""/>
+                            <p>{Joke.authorName}</p>
+                        </div>
+                        <p>{Joke.jokeContent}</p>
+                        <div className="ourFlex">
+                            <div className="jokeInfoBox">
+                                <p id="rating" onClick={() => toggleForm(Joke.jokeId)}>Rating: {Joke.rating}/10</p>
+                                <p className="info_notif">click on 'Rating' to change</p>
+                            </div>
+                            <div className={activeJokeId === Joke.jokeId ? "hid active" : "hid"}>
+                                <form className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
+                                    <input min="1" max="10" id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
+                                    <button type="submit" id="submitRate">Change rating</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div className="lower-flex">
+                            <button className="delete_btn" onClick={() => onDelete(Joke.jokeId)}>
+                                Delete joke
+                            </button>
 
-            <div className="userInfoBox">
-                <img src={usr_icon} alt=""/>
-                <p>{Joke.authorName}</p>
-            </div>
-            <p>{Joke.jokeContent}</p>
-            <div className="ourFlex">
-                <div className="jokeInfoBox">
-                    <p id="rating" onClick={() => toggleForm(Joke.jokeId)}>Rating: {Joke.rating}/10</p>
-                    <p className="info_notif">click on 'Rating' to change</p>
-                </div>
-                <div className={activeJokeId === Joke.jokeId ? "hid active" : "hid"}>
-                    <form className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
-                    <input min="1" max="10" id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
-                    <button type="submit" id="submitRate">Change rating</button>
-                    </form>
-                </div>
-            </div>
+                            <div className="see-comments-box">
+                                <Link to="/JokeComments" className="comment-link">See all comments</Link>
+                            </div>
+                        </div>
 
-            <button className="delete_btn" onClick={() => onDelete(Joke.jokeId)}>
-                Delete joke
-            </button>
-        </div>
-           ))}
-       </>
-    )
+                    </div>
+                ))}
+            </>
+        )
+    }
+    else {
+        return (
+            <>
+                {message && <p>{message}</p>}
+                {error && <p>{error}</p>}
+
+                {data.map((Joke) =>(
+                    <div className="bubbleBox" key={Joke.jokeId}>
+
+                        <div className="userInfoBox">
+                            <img src={usr_icon} alt=""/>
+                            <p>{Joke.authorName}</p>
+                        </div>
+                        <p>{Joke.jokeContent}</p>
+                        <div className="ourFlex">
+                            <div className="jokeInfoBox">
+                                <p id="rating" onClick={() => toggleForm(Joke.jokeId)} style={{cursor: "default"}}>Rating: {Joke.rating}/10</p>
+                                <p className="info_notif">Login to change rating</p>
+                            </div>
+                        </div>
+
+                        <div className="see-comments-box">
+                                <Link to="/JokeComments" className="comment-link">See all comments</Link>
+                        </div>
+                    </div>
+                ))}
+            </>
+        )
+    }
+
 }
 export default JokeBuble;
