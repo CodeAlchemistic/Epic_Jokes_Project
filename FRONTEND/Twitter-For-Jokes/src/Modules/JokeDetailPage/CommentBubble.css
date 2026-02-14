@@ -1,0 +1,45 @@
+.bubble-div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    width: 50%;
+    margin: auto;
+
+    border-left: 2px solid #3640ac;
+    border-bottom: 2px solid #3640ac;
+
+    padding: 10px;
+}
+
+
+.bubble-div > div {
+    display: flex;
+    flex-direction: column;
+
+    width: 20%;
+}
+
+.bubble-div > div > img {
+    width: 50%;
+}
+
+#comment-header {
+    text-decoration: underline #f6c671 2px;
+}
+
+
+/* styles for the if statement where there is no comment*/
+
+#no-comments-message {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #858484;
+
+    border: 2px solid #3640ac;
+    border-radius: 10px;
+    width: 50%;
+    margin: 100px auto;
+
+    background-color: #17134a;
+}

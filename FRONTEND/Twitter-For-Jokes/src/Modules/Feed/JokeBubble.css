@@ -132,3 +132,38 @@
 
     text-align: center;
 }
+
+
+
+
+/* styles for modal overlay*/
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(15px);
+
+    z-index: 9999;
+}
+
+.modal-box {
+    background-color: #2b1a7a;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #04aef3;
+
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#second-button {
+    border: 3px solid darkred;
+}

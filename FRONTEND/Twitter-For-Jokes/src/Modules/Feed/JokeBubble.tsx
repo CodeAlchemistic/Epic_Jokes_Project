@@ -26,6 +26,25 @@ interface JokeBubbleProps {
     refreshJokes: () => void;
 }
 
+const ConfirmModal = ({message, onConfirm, onCancel}) => {
+    return (
+        <>
+            <div className="modal-overlay">
+                <div className="modal-box">
+                    <p>{message}</p>
+
+                    <div className="modal-buttons">
+                        <button id="first-button" onClick={onCancel}>Cancel</button>
+                        <button id="second-button" onClick={onConfirm}>Delete</button>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
+
+
+
 const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
     const user = useAuth();
 
@@ -36,6 +55,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
     const [error, setError] = useState<string | null>(null);
 
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
+    const [selectedJokeId, setSelectedJokeId] = useState<number | null>(null);
 
     const toggleForm = (id: number) => {
         setActiveJokeId(activeJokeId === id ? null : id);
@@ -70,15 +90,6 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
 
 
     const onDelete = async (id: number) => {
-        const handleDeleteclick = () => {
-            setIsConfirmOpen(true);
-        };
-
-        const confirmDelete = async () => {
-            setIsConfirmOpen(false);
-        };
-
-
 
         setMessage(null);
         setError(null);
@@ -100,14 +111,29 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
         }
 
 
-
     }
+
+    const confirmDelete = async () => {
+        if (!selectedJokeId) return;
+
+        await onDelete(selectedJokeId);
+        setIsConfirmOpen(false);
+        setSelectedJokeId(null);
+    };
 
     if (user.user?.isAuthenticated === true) {
         return (
             <>
+            {isConfirmOpen && (
+                <ConfirmModal
+                    message="Do you really want to delete this joke?"
+                    onConfirm={confirmDelete}
+                    onCancel={() => setIsConfirmOpen(false)}
+                />
+            )}
                 {message && <p>{message}</p>}
                 {error && <p>{error}</p>}
+
 
                 {jokes.map((Joke) =>(
                     <div className="bubbleBox" key={Joke.jokeId}>
@@ -130,15 +156,14 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                             </div>
                         </div>
                         <div className="lower-flex">
-                            {user.user?.userName === Joke.authorName ?
-                                <button className="delete_btn" onClick={() => onDelete(Joke.jokeId)}>
-                                    Delete joke
-                                </button>
-                            : <></>
-                            }
+                            {user.user?.userName === Joke.authorName?
+                            <button className="delete_btn" onClick={() => {
+                                setSelectedJokeId(Joke.jokeId)
+                                setIsConfirmOpen(true);
+                            }}>Delete joke</button>:<></>}
 
                             <div className="see-comments-box">
-                                <Link to={`/jokes/${Joke.jokeId}`} className="comment-link">See all comments</Link>
+                                    <Link to={`/jokes/${Joke.jokeId}`} className="comment-link">See all comments</Link>
                             </div>
                         </div>
 

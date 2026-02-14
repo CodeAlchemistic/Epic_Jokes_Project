@@ -13,6 +13,7 @@ import Login from "./Pages/Login.tsx";
 import {AuthProvider} from "./Modules/Contexts/AuthContext.tsx";
 import {Toaster} from "react-hot-toast";
 import JokeDetailPage from "./Pages/JokeDetailPage.tsx";
+import Profile from "./Profile/Profile.tsx";
 
 
 
@@ -26,6 +27,7 @@ function App() {
 
               <Routes>
                   <Route path="/" element={<Landing />} />
+                  <Route path="/profile" element={<Profile/>}></Route>
                   <Route path="/feed" element={<Feed />} />
                   <Route path="/creators" element={<Creators />} />
                   <Route path="/playground" element={<PlayGround />} />

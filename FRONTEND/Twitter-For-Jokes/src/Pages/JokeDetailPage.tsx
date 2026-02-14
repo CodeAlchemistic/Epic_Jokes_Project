@@ -52,6 +52,18 @@ function JokeDetailPage() {
     }, [fatchComments]);
 
 
+   if (!comments.length) {
+       return(
+           <>
+               {joke && <JokeDisplayBubble data={joke} />}
+
+               {id && <CommentPostBubble jokeId={id} fatchComments={fatchComments} />}
+
+                <p id="no-comments-message">There are no comments yet. You can be first!</p>
+           </>
+       )
+   }
+
     return (
         <>
             {joke && <JokeDisplayBubble data={joke} />}

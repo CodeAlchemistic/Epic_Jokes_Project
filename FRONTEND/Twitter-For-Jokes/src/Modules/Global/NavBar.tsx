@@ -21,7 +21,7 @@ function Nav() {
 
                     <nav className="main-navbar">
                         <div className="tfj-bar">
-                            <div id="user-img-box"><img src={pfpPicture} alt=""/> <p>{user.userName}</p></div>
+                            <Link to="/Profile"><div id="user-img-box"><img src={pfpPicture} alt=""/> <p>{user.userName}</p></div></Link>
                             <Link to="/Creators">Creators</Link>
                             <Link className="" to="/">
                                 <img src={logoImg} alt="Logo" />
