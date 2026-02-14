@@ -2,13 +2,9 @@
 import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
 import {Link} from "react-router-dom";
-import {convertStringFromInput} from "../Auxiliary/AuxiliaryFunctions.tsx";
-import {useAuth} from "../Contexts/AuthContext.tsx";
 import './JokeBubble.css';
-
 import { convertStringFromInput } from "../Auxiliary/AuxiliaryFunctions.tsx";
 import { useAuth } from "../Contexts/AuthContext.tsx";
-import {Link} from "react-router-dom";
 
 
 interface Joke {
@@ -31,7 +27,7 @@ interface JokeBubbleProps {
 }
 
 const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
-    const { user } = useAuth();
+    const user = useAuth();
 
 
     const [activeJokeId, setActiveJokeId] = useState<number | null>(null);
@@ -98,15 +94,13 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
 
     }
 
-    const user = useAuth();
-
     if (user.user?.isAuthenticated === true) {
         return (
             <>
                 {message && <p>{message}</p>}
                 {error && <p>{error}</p>}
 
-                {data.map((Joke) =>(
+                {jokes.map((Joke) =>(
                     <div className="bubbleBox" key={Joke.jokeId}>
 
                         <div className="userInfoBox">
@@ -132,7 +126,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                             </button>
 
                             <div className="see-comments-box">
-                                <Link to="/JokeComments" className="comment-link">See all comments</Link>
+                                <Link to="/JokeDetailPage" className="comment-link">See all comments</Link>
                             </div>
                         </div>
 
@@ -147,7 +141,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                 {message && <p>{message}</p>}
                 {error && <p>{error}</p>}
 
-                {data.map((Joke) =>(
+                {jokes.map((Joke) =>(
                     <div className="bubbleBox" key={Joke.jokeId}>
 
                         <div className="userInfoBox">
@@ -163,7 +157,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                         </div>
 
                         <div className="see-comments-box">
-                                <Link to="/JokeComments" className="comment-link">See all comments</Link>
+                                <Link to="/JokeDetailPage" className="comment-link">See all comments</Link>
                         </div>
                     </div>
                 ))}

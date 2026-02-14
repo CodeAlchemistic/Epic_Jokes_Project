@@ -12,7 +12,6 @@ import Register from "./Pages/Register.tsx";
 import Login from "./Pages/Login.tsx";
 import {AuthProvider} from "./Modules/Contexts/AuthContext.tsx";
 import {Toaster} from "react-hot-toast";
-import JokeComments from "./Pages/Comments/JokeComments.tsx";
 import JokeDetailPage from "./Pages/JokeDetailPage.tsx";
 
 
@@ -39,14 +38,13 @@ function App() {
               <Routes>
                   <Route path="/" element={<Landing />} />
                   <Route path="/feed" element={<Feed />} />
-                  <Route path="/JokeComments" element={<JokeComments />}></Route>
                   <Route path="/creators" element={<Creators />}></Route>
                   <Route path="/playground" element={<PlayGround />} />
               </Routes>
           </div>
               <div>
                   <Routes>
-                      <Route path="/feed/Detail/:id" element={<JokeDetailPage />}>Detail</Route>
+                      <Route path="/JokeDetailPage" element={<JokeDetailPage />}></Route>
                   </Routes>
               </div>
           <div>

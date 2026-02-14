@@ -57,7 +57,7 @@ function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
                 }
 
                 if (!response.ok) {
-                    const text = await response.text();
+                    const text = response.text();
                     setShowError(true);
                     console.log("Api chyba", text);
                     return;
