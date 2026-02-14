@@ -130,9 +130,12 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                             </div>
                         </div>
                         <div className="lower-flex">
-                            <button className="delete_btn" onClick={() => onDelete(Joke.jokeId)}>
-                                Delete joke
-                            </button>
+                            {user.user?.userName === Joke.authorName ?
+                                <button className="delete_btn" onClick={() => onDelete(Joke.jokeId)}>
+                                    Delete joke
+                                </button>
+                            : <></>
+                            }
 
                             <div className="see-comments-box">
                                 <Link to={`/jokes/${Joke.jokeId}`} className="comment-link">See all comments</Link>

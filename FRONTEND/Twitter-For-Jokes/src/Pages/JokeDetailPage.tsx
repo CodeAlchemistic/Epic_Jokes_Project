@@ -52,7 +52,6 @@ function JokeDetailPage() {
     }, [fatchComments]);
 
 
-
     return (
         <>
             {joke && <JokeDisplayBubble data={joke} />}
