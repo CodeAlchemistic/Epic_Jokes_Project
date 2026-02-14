@@ -36,8 +36,8 @@ namespace TwiiterForJokes.Controllers
             return Ok(allJokes);
         }
 
-        [HttpGet
-            ("{id}")]
+
+        [HttpGet("{id}")]
         public async Task<ActionResult<Joke>> GetJokeById(int id)
         {
             var joke = await _context.Jokes.FindAsync(id);

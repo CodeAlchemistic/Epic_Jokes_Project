@@ -5,7 +5,7 @@ import CommentPostBubble from "../Modules/JokeDetailPage/CommentPostBubble.tsx";
 import CommentBubble from "../Modules/JokeDetailPage/CommentBubble.tsx";
 
 export interface JokeOnDetailPage {
-    jokeId: string;
+    jokeId: number;
     jokeContent: string;
     rating: number;
     authorName: string;
@@ -43,13 +43,15 @@ function JokeDetailPage() {
         const fatchComments = useCallback(() => {
                    fetch(`http://localhost:65451/api/Comments/${id}`, {
                     method: "GET",
-                    headers: {'Content-Type': 'application/json'},
+                    headers: {'Accept': 'application/json'},
                 }).then(response => response.json()).then(data => setComments(data));
             }, [id])
 
     useEffect(() => {
         fatchComments();
     }, [fatchComments]);
+
+
 
     return (
         <>
@@ -59,7 +61,6 @@ function JokeDetailPage() {
 
             {id && <CommentBubble jokeId={id} data={comments} fatchComments={fatchComments} />}
         </>
-
     )
 }
 

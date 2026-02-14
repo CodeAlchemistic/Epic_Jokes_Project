@@ -11,6 +11,7 @@ interface Comment {
 }
 
 const CommentBubble = ({ data }: CommentBubbleProps) => {
+    console.log("CommentBubble render", { data });
     return (
         <>
             {data.map((comment: Comment) => (

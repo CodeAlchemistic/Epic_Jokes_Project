@@ -20,36 +20,23 @@ function App() {
   return (
       <>
           <AuthProvider>
-               <div>
-                   <Toaster
-                    position="top-left"
-                    reverseOrder={false}
-                   />
-               </div>
-          <div>
-              <NavBar />
-              <Routes>
-                  <Route path="/login" element={<Login/>}></Route>
-                  <Route path="/register" element={<Register/>}></Route>
-              </Routes>
-          </div>
+              <Toaster position="top-left" reverseOrder={false} />
 
-          <div>
+              <NavBar />
+
               <Routes>
                   <Route path="/" element={<Landing />} />
                   <Route path="/feed" element={<Feed />} />
-                  <Route path="/creators" element={<Creators />}></Route>
+                  <Route path="/creators" element={<Creators />} />
                   <Route path="/playground" element={<PlayGround />} />
+
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+
+                  <Route path="/jokes/:id" element={<JokeDetailPage />} />
               </Routes>
-          </div>
-              <div>
-                  <Routes>
-                      <Route path="/JokeDetailPage" element={<JokeDetailPage />}></Route>
-                  </Routes>
-              </div>
-          <div>
-              <Footer></Footer>
-          </div>
+
+              <Footer />
           </AuthProvider>
       </>
 

@@ -19,7 +19,7 @@ namespace TwiiterForJokes.Controllers
             _context = context;
         }
 
-        [HttpGet("{jokeId}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<List<Comment>>> GetAllCommentsForJoke(int jokeId)
         {
             var commentsForJoke = await _context.Comments.Where(comment => comment.JokeId == jokeId).Select(comment => new GetAllCommentsForJoke()

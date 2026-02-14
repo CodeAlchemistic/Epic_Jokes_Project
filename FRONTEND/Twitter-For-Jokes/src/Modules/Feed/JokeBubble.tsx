@@ -35,6 +35,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
+    const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
     const toggleForm = (id: number) => {
         setActiveJokeId(activeJokeId === id ? null : id);
@@ -69,7 +70,15 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
 
 
     const onDelete = async (id: number) => {
-        if (!window.confirm("Do you really want to delete the joke?")) return;
+        const handleDeleteclick = () => {
+            setIsConfirmOpen(true);
+        };
+
+        const confirmDelete = async () => {
+            setIsConfirmOpen(false);
+        };
+
+
 
         setMessage(null);
         setError(null);
@@ -126,7 +135,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                             </button>
 
                             <div className="see-comments-box">
-                                <Link to="/JokeDetailPage" className="comment-link">See all comments</Link>
+                                <Link to={`/jokes/${Joke.jokeId}`} className="comment-link">See all comments</Link>
                             </div>
                         </div>
 
@@ -157,7 +166,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                         </div>
 
                         <div className="see-comments-box">
-                                <Link to="/JokeDetailPage" className="comment-link">See all comments</Link>
+                                <Link to={`/jokes/${Joke.jokeId}`} className="comment-link">See all comments</Link>
                         </div>
                     </div>
                 ))}

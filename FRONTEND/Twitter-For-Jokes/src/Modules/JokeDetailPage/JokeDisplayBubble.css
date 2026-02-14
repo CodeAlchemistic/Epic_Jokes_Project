@@ -1,0 +1,28 @@
+.joke-display-bubble {
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+
+    border: 2px solid #858484;
+    border-radius: 10px;
+    background-color: #17134a;
+
+    margin-bottom: 20px;
+}
+
+
+#name {
+    font-size: 2.5rem;
+    color: #3640ac;
+}
+
+#head-front {
+    width: 50%;
+    margin: auto;
+
+    font-size: 3rem;
+    text-align: center;
+}

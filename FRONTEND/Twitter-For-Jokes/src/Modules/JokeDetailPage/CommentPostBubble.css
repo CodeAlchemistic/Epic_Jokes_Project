@@ -1,0 +1,44 @@
+.comment-post-form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.comment-post-form > textarea {
+    height: 100px;
+    border: 2px solid #f6c671;
+}
+
+.post-comment-input:hover {
+    outline: #f6c671 solid 3px;
+}
+.post-comment-input:focus {
+    outline: #f6c671 solid 3px;
+}
+
+button {
+    border: 2px solid #3640ac;
+    background-color: #0e123e;
+    width: fit-content;
+    padding: 0 20px;
+
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+#nothing-to-comment-message {
+    border: #858484 solid 3px;
+    border-radius: 10px;
+
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+    color: grey;
+}
+

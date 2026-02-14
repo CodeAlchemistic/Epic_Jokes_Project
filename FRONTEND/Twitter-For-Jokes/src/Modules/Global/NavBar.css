@@ -72,3 +72,18 @@ nav > div > a {
 #user-icon-nav-bar {
     width: 180px;
 }
+
+#user-img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user-img-box img {
+    height: 50px;
+}
+
+#user-img-box > p {
+    font-size: 1.2rem;
+    padding: 0;
+}
