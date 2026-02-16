@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e311d6ca-1cba-4a5b-ba93-975e5e885236" name="Changes" comment="mega update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/AuthenticationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/AuthenticationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Profile/Profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Profile/Profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Profile/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Pages/Profile/Profile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +74,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\SobotkaTomas\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\Tomáš\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -113,6 +117,7 @@
       <workItem from="1771081497872" duration="990000" />
       <workItem from="1771082651998" duration="12740000" />
       <workItem from="1771233443065" duration="2355000" />
+      <workItem from="1771258432308" duration="7490000" />
     </task>
     <task id="LOCAL-00001" summary="mega update">
       <option name="closed" value="true" />

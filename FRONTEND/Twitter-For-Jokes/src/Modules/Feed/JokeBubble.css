@@ -122,6 +122,10 @@
     cursor: pointer;
 }
 
+.delete_btn:hover {
+    outline: 2px solid #04aef3;
+}
+
 .see-comments-box {
     margin: 10px 0;
     border: 2px solid #04aef3;
@@ -133,7 +137,9 @@
     text-align: center;
 }
 
-
+.see-comments-box:hover {
+    outline: 2px solid #04aef3;
+}
 
 
 /* styles for modal overlay*/

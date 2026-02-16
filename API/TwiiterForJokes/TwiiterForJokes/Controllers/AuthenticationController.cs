@@ -86,7 +86,7 @@ namespace TwiiterForJokes.Controllers
         }
 
 
-        [HttpGet("Profile")]
+        [HttpGet("profile")]
         [Authorize]
         public async Task<ActionResult> Profile()
         {

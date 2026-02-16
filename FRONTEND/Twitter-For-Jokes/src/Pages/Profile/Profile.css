@@ -1,3 +1,47 @@
 #profile-text {
     text-align: center;
 }
+
+.profile-container {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.profile-flex-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #0296e3;
+    border-image: linear-gradient(300deg,#0296e3, #320970, #0296e3, #3640ac, #2b1a7a, #0296e3) 1;
+    border-radius: 15px;
+
+    width: fit-content;
+    margin: auto;
+    padding: 25px 0;
+}
+
+.profile-flex-box > img {
+    width: 30%;
+}
+
+span {
+    font-size: 2.5rem;
+    color: #f6c671;
+}
+
+.joke-profile-container {
+    border : 2px solid #0296e3;
+    border-radius: 15px;
+
+    padding: 25px 10px;
+    background-color: #111642;
+}
+
+.profile-container > p {
+    font-size: 2.5rem;
+}

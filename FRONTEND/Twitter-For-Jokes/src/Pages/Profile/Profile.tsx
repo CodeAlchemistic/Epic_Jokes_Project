@@ -3,46 +3,72 @@ import {useAuth} from "../../Modules/Contexts/AuthContext.tsx";
 import usr_icon from "../../assets/usr_icon.png";
 import {useEffect, useState} from "react";
 
+interface Joke {
+    jokeId: number;
+    jokeContent: string;
+}
+
 interface userToGetJokeCount {
     userId: number;
     userName: string;
-    jokesCount: number;
+    jokeCount: number;
+    jokes: Joke[];
 }
 
 export function Profile() {
     const {user} = useAuth();
-    const [jokesCount, setJokeCount] = useState<number | null>(null);
+    const [data, setData] = useState<userToGetJokeCount | null>(null);
+
 
     useEffect(() => {
         async function load() {
-            if (!user?.userId) {
+
+            const token = localStorage.getItem("secureToken");
+
+            const res = await fetch("http://localhost:65451/api/Authentication/profile", {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                    ...(token ? { Authorization: `Bearer ${token}` } : {})
+                }
+            });
+
+            if (!res.ok) {
                 return;
             }
 
-            const res = await fetch("http://localhost:65451/api/Users");
-            if (!res.ok) return;
 
-            const users: userToGetJokeCount[] = await res.json();
-            const thisUser = users.find(u => u.userId === user.userId);
 
-            setJokeCount(thisUser?.jokesCount ?? 0);
+            const profileData: userToGetJokeCount = await res.json();
+            setData(profileData);
+
+
         }
         load();
 
     }, [user?.userId]);
-    console.log("userId:", user?.userId);
-
+    console.log(data?.jokeCount, data?.jokes, data?.jokes, data?.userId);
     return (
-        <>
-            <p id="profile-text">Your profile</p>
+      <>
+          <h1>Your profile</h1>
+          <div className="profile-container">
+              <div className="profile-flex-box">
+                  <img src={usr_icon}/>
+                  <p>Nickname: {data?.userName}</p>
+                  <p>Total number of your jokes: <span>{data?.jokeCount}</span></p>
+              </div>
 
-            <div>
-                <img src={usr_icon} alt=""/>
-                <p>{user?.userName}</p>
-                <p>{jokesCount}</p>
-            </div>
-        </>
-    )
+              <p>Your jokes:</p>
+              {data?.jokes.map(j => (
+                  <div className="joke-profile-container" key={j.jokeId}>
+                      <p>{j.jokeContent}</p>
+                  </div>
+              ))}
+          </div>
+
+      </>
+
+    );
 }
 
 export default Profile;

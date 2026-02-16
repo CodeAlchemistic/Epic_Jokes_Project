@@ -31,11 +31,27 @@ form {
 }
 
 textarea {
-    border: 5px solid white;
+    border: 5px solid transparent;
     border-radius: 15px;
     padding: 10px;
     line-height: 1;
     height: 200px;
+    outline: none;
+
+    background:
+            linear-gradient(#111642, #07091b) padding-box,
+            linear-gradient(90deg, white, white, white, white, white, #00ffaa, #0296e3, #f6c671, white, white, white, white, white) border-box;
+
+    background-size: 100% 100%, 300% 300%;
+}
+
+textarea:focus {
+    animation: borderMove 5s linear infinite;
+}
+
+@keyframes borderMove {
+    0%   { background-position: 0 0, 0% 50%; }
+    100% { background-position: 0 0, 100% 50%; }
 }
 
 form > div > div > input {
