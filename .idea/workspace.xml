@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e311d6ca-1cba-4a5b-ba93-975e5e885236" name="Changes" comment="mega update" />
+    <list default="true" id="e311d6ca-1cba-4a5b-ba93-975e5e885236" name="Changes" comment="mega update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +112,7 @@
       <workItem from="1771062461517" duration="11366000" />
       <workItem from="1771081497872" duration="990000" />
       <workItem from="1771082651998" duration="12740000" />
-      <workItem from="1771233443065" duration="783000" />
+      <workItem from="1771233443065" duration="1663000" />
     </task>
     <task id="LOCAL-00001" summary="mega update">
       <option name="closed" value="true" />

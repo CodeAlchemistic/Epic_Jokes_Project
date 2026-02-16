@@ -77,5 +77,21 @@ namespace TwiiterForJokes.Controllers
             await _context.SaveChangesAsync();
             return Ok(comment);
         }
+
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteComment(int id)
+        {
+            var comment = await _context.Comments.FindAsync(id);
+
+            if (comment == null)
+            {
+                return NotFound("This comment does not exist bro.");
+            }
+
+            _context.Comments.Remove(comment);
+            await _context.SaveChangesAsync(); 
+           return NoContent();
+        }
     }
 }
