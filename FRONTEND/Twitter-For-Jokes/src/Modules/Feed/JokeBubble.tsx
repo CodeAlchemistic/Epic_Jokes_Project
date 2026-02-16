@@ -54,6 +54,8 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
 
+
+    //variables for confirmation modal
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
     const [selectedJokeId, setSelectedJokeId] = useState<number | null>(null);
 
