@@ -84,5 +84,38 @@ namespace TwiiterForJokes.Controllers
 
             return Ok(new { message = "Logout was successful" });
         }
+
+
+        [HttpGet("Profile")]
+        [Authorize]
+        public async Task<ActionResult> Profile()
+        {
+            var usrIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                    ?? User.FindFirstValue("sub");
+
+            if (usrIdStr == null) return Unauthorized("Špatné jméno nebo heslo.");
+
+            int usrId = int.Parse(usrIdStr);
+
+
+            List<Joke> usrJokes = _context.Jokes.Where(u => u.UsrId == usrId).ToList();
+
+            var dto = await _context.Users.Where(u => u.UsrId == usrId).Select(u => new
+            {
+                userId = u.UsrId,
+                userName = u.UserName,
+                jokeCount = u.Jokes.Count(),
+                jokes = u.Jokes.Select(u => new GetJokeDto
+                {
+                    JokeId = u.JokeId,
+                    JokeContent = u.JokeContent,
+                })
+            }).FirstOrDefaultAsync();
+
+            await _context.SaveChangesAsync();
+            if (dto == null) return NotFound();
+
+            return Ok(dto);
+        }
     }
 }
