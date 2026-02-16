@@ -25,8 +25,14 @@ interface JokeBubbleProps {
     jokes: Joke[];
     refreshJokes: () => void;
 }
+interface ConfirmModalProps {
+    message: string;
+    onConfirm: () => void;
+    onCancel: () => void;
+}
 
-const ConfirmModal = ({message, onConfirm, onCancel}) => {
+
+const ConfirmModal = ({message, onConfirm, onCancel }: ConfirmModalProps) => {
     return (
         <>
             <div className="modal-overlay">
@@ -111,8 +117,6 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
         } catch {
             setError("Network error occurred while deleting.");
         }
-
-
     }
 
     const confirmDelete = async () => {

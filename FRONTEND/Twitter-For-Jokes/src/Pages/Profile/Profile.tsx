@@ -1,6 +1,6 @@
 import "./Profile.css"
-import {useAuth} from "../Modules/Contexts/AuthContext.tsx";
-import usr_icon from "../assets/usr_icon.png";
+import {useAuth} from "../../Modules/Contexts/AuthContext.tsx";
+import usr_icon from "../../assets/usr_icon.png";
 import {useEffect, useState} from "react";
 
 interface userToGetJokeCount {

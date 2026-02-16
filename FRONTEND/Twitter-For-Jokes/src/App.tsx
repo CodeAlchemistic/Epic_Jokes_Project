@@ -13,7 +13,7 @@ import Login from "./Pages/Login.tsx";
 import {AuthProvider} from "./Modules/Contexts/AuthContext.tsx";
 import {Toaster} from "react-hot-toast";
 import JokeDetailPage from "./Pages/JokeDetailPage.tsx";
-import Profile from "./Profile/Profile.tsx";
+import Profile from "./Pages/Profile/Profile.tsx";
 
 
 

@@ -5,7 +5,9 @@ interface JokeDisplayBubbleProps {
     data: JokeOnDetailPage;
 }
 
+
 const JokeDisplayBubble = ({ data}: JokeDisplayBubbleProps) => {
+
     return (
         <>
             <p id="head-front">Joke</p>
