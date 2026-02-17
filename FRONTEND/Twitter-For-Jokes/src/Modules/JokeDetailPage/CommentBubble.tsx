@@ -39,6 +39,29 @@ const ConfirmModal = ({message, onConfirm, onCancel }: ConfirmModalProps) => {
     )
 }
 
+
+const CommentText = ({text}: {text: string}) => {
+    const [isExtended, setIsExtended] = useState(false);
+
+    if (text.length <= 100 ) {
+        return (
+            <p>{text}</p>
+        )
+    } else  {
+        return (
+            <>
+              <p>
+                  {isExtended ? text: `${text.slice(0, 100)} ...`}
+              </p>
+
+               <button  onClick={() => setIsExtended(!isExtended)}>
+                   {isExtended ? " Show less" : "Show more"}
+               </button>
+            </>
+        )
+    }
+}
+
 const CommentBubble = ({ data, fatchComments }: CommentBubbleProps) => {
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
     const [selectedCommentId, setSelectedCommentId] = useState<number | null>(null);
@@ -83,7 +106,7 @@ const CommentBubble = ({ data, fatchComments }: CommentBubbleProps) => {
                         <img src={usr_icon} alt=""/>
                         <p>{comment.authorName}</p>
                     </div>
-                   <p>{comment.commentContent}</p>
+                   <CommentText text={comment.commentContent}></CommentText>
                     { comment.authorName === user.user?.userName?
                     <button onClick={() => {
                         setIsConfirmOpen(true);

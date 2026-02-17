@@ -65,6 +65,26 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
     const [isConfirmOpen, setIsConfirmOpen] = useState(false);
     const [selectedJokeId, setSelectedJokeId] = useState<number | null>(null);
 
+    const [searchTerm, setSearchTerm] = useState<string>("");
+    const [sortBy, setSortBy] = useState<string>("");
+
+    const filteredJokes = [...jokes]
+        .filter((joke) =>
+            joke.authorName.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        .sort((a, b) => {
+            switch (sortBy.toLowerCase()) {
+                case "desc":
+                    return parseFloat(b.rating) - parseFloat(a.rating);
+                case "asc":
+                    return parseFloat(a.rating) - parseFloat(b.rating);
+                default:
+                    return 0;
+            }
+        });
+
+
+
     const toggleForm = (id: number) => {
         setActiveJokeId(activeJokeId === id ? null : id);
         setRatingInput("");
@@ -140,8 +160,15 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                 {message && <p>{message}</p>}
                 {error && <p>{error}</p>}
 
+                <input type="text" placeholder="Serch for author..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
 
-                {jokes.map((Joke) =>(
+                <select onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
+                    <option value="none">Default order</option>
+                    <option value="desc">Best rating (10 - 1)</option>
+                    <option value="asc">Worst rating (1 - 10)</option>
+                </select>
+
+                {filteredJokes.map((Joke) =>(
                     <div className="bubbleBox" key={Joke.jokeId}>
 
                         <div className="userInfoBox">
@@ -184,7 +211,15 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                 {message && <p>{message}</p>}
                 {error && <p>{error}</p>}
 
-                {jokes.map((Joke) =>(
+                <input type="text" placeholder="Serch for author..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+
+                <select onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
+                    <option value="none">Default order</option>
+                    <option value="desc">Best rating (10 - 1)</option>
+                    <option value="asc">Worst rating (1 - 10)</option>
+                </select>
+
+                {filteredJokes.map((Joke) =>(
                     <div className="bubbleBox" key={Joke.jokeId}>
 
                         <div className="userInfoBox">
