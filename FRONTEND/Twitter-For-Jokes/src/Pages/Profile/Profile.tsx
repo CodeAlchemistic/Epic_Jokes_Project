@@ -2,6 +2,7 @@ import "./Profile.css"
 import {useAuth} from "../../Modules/Contexts/AuthContext.tsx";
 import usr_icon from "../../assets/usr_icon.png";
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 interface Joke {
     jokeId: number;
@@ -61,7 +62,7 @@ export function Profile() {
               <p>Your jokes:</p>
               {data?.jokes.map(j => (
                   <div className="joke-profile-container" key={j.jokeId}>
-                      <p>{j.jokeContent}</p>
+                     <Link to={`/jokes/${j.jokeId}`} > <p>{j.jokeContent}</p></Link>
                   </div>
               ))}
           </div>
