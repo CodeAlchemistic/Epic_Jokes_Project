@@ -1,0 +1,14 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#loading {
+    display: flex;
+    justify-content: center;
+}
+
+#loading-img {
+    max-width: 10%;
+    height: auto;
+}

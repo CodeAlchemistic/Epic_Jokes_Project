@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import {useAuth} from "../Contexts/AuthContext.tsx";
+import Loading from "../Global/Loading.tsx";
 
 
 function LoginBubble() {
@@ -12,6 +13,7 @@ function LoginBubble() {
     const [loginSuccesfull, setLoginSuccesfull] = useState("");
     const [errorNotification, setErrorNotification] = useState(false);
     const [confirm, showConfirm] = useState(false);
+    const [loading , setLoading] = useState(false);
 
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -24,6 +26,8 @@ function LoginBubble() {
             username: userName,
             password: password,
         }
+
+        setLoading(true);
 
         fetch("http://localhost:65451/api/Authentication", {
             method: "POST",
@@ -42,10 +46,7 @@ function LoginBubble() {
                 setLoginSuccesfull("successfull");
                 toast.success("Login successfull");
 
-                const data = await response.json();
-                localStorage.setItem("secureToken", data.token);
-
-
+                setLoading(false);
                 navigate("/feed");
             }else{
                 console.log(response);
@@ -53,8 +54,8 @@ function LoginBubble() {
                 setErrorNotification(true);
                 setLoginSuccesfull("unsuccessfull");
 
+                setLoading(false);
                 toast.error("Login failed");
-
 
             }
         })
@@ -76,6 +77,7 @@ function LoginBubble() {
             </div>
             <button type="submit">Login</button>
         </form>
+            {loading && <Loading />}
             {confirm && (<p className="confirm-message">Login was successfull</p>)}
             {errorNotification && (<p className="error_message">Your password or username is incorrect</p>)}
         </>

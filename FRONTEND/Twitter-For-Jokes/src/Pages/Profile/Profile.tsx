@@ -24,21 +24,15 @@ export function Profile() {
     useEffect(() => {
         async function load() {
 
-            const token = localStorage.getItem("secureToken");
-
             const res = await fetch("http://localhost:65451/api/Authentication/profile", {
                 method: "GET",
-                headers: {
-                    'Content-Type': 'application/json',
-                    ...(token ? { Authorization: `Bearer ${token}` } : {})
-                }
+                credentials: "include",
+                headers: {'content-type': 'application/json'},
             });
 
             if (!res.ok) {
                 return;
             }
-
-
 
             const profileData: userToGetJokeCount = await res.json();
             setData(profileData);

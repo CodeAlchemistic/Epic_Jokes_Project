@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import toast from "react-hot-toast";
+import Loading from "../Global/Loading.tsx";
 /*validation NEED TO BE ADDED: any of inputs cannot be empty; the username must not already exist*/
 
 function RegisterBubble() {
@@ -12,6 +13,7 @@ function RegisterBubble() {
     const [registerSuccesfull, setRegisterSuccesfull] = useState("");
     const [confirm, setConfirm] = useState(false);
     const [showAllradyExisting, setShowAllradyExisting] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -44,7 +46,7 @@ function RegisterBubble() {
             password: password,
         }
 
-
+        setLoading(true);
         fetch("http://localhost:65451/api/Users",{ //url needs to be changed
             method: "POST",
             headers: {'Content-Type': 'application/json'},
@@ -59,6 +61,7 @@ function RegisterBubble() {
 
                 setRegisterSuccesfull("successfull");
                 setConfirm(true);
+                setLoading(false);
                 toast.success("Successfully registered!");
 
             }
@@ -67,6 +70,7 @@ function RegisterBubble() {
                 setConfirm(false);
                 setRegisterSuccesfull("unsuccessfull");
                 setShowAllradyExisting(true)
+                setLoading(false);
             }
         } )
     }
@@ -89,7 +93,7 @@ function RegisterBubble() {
                 </div>
                 <button type="submit">Create</button>
             </form>
-
+            {loading && <Loading />}
             {showNotif && (
                 <p id="register-notif" className="visit this_error_message">Username nor password cannot be empty.</p>
             )}

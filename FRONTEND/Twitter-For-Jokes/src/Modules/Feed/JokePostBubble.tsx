@@ -3,15 +3,16 @@ import './JokePostBubble.css'
 import {useAuth} from "../Contexts/AuthContext.tsx";
 import {Link} from "react-router-dom";
 import toast from "react-hot-toast";
+import Loading from "../Global/Loading.tsx";
 
 interface JokePostBubbleProps {
     onJokePosted: () => void;
 }
 
 function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
-
     const [jokeContent, setJokeContent] = useState('');
     const [rating, setRating] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const postJoke = (e: React.FormEvent) => {
         e.preventDefault();
@@ -31,6 +32,8 @@ function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
             rating: rating
         }
 
+        setLoading(true);
+
         fetch('http://localhost:65451/api/Jokes', {
             method: 'POST',
             credentials: 'include',
@@ -46,8 +49,10 @@ function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
                     setJokeContent('');
                     setRating('');
                     toast.success("Joke was Posted");
+                    setLoading(false);
                     onJokePosted();
                 } else{
+                    setLoading(false);
                     console.log(response, "Vše OK")
                     toast.error("There was an error while posting your joke. Try again later")
                 }
@@ -93,7 +98,7 @@ const [showError, setShowError] = useState(false);
                         <button type="submit">Post joke</button>
                     </div>
                 </form>
-
+                {loading && <Loading />}
                 {showError && (<p className="error_message">Joke nor rating cannot be empty!</p>)}
 
             </>

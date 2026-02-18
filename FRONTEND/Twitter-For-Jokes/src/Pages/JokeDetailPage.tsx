@@ -3,6 +3,7 @@ import {useCallback, useEffect, useState} from "react";
 import JokeDisplayBubble from "../Modules/JokeDetailPage/JokeDisplayBubble.tsx";
 import CommentPostBubble from "../Modules/JokeDetailPage/CommentPostBubble.tsx";
 import CommentBubble from "../Modules/JokeDetailPage/CommentBubble.tsx";
+import Loading from "../Modules/Global/Loading.tsx";
 
 export interface JokeOnDetailPage {
     jokeId: number;
@@ -22,6 +23,7 @@ function JokeDetailPage() {
     const {id} = useParams<{id: string}>();
     const [joke, setJoke] = useState<JokeOnDetailPage | null>(null);
     const [comments, setComments] = useState<Comment[]>([]);
+    const [loading, setLoading] = useState(true);
 
         useEffect(() => {
 
@@ -44,7 +46,17 @@ function JokeDetailPage() {
                    fetch(`http://localhost:65451/api/Comments/${id}`, {
                     method: "GET",
                     headers: {'Accept': 'application/json'},
-                }).then(response => response.json()).then(data => setComments(data));
+                })
+                       .then(res => {
+                           if (res.ok){
+                               setLoading(false);
+                               return res.json();
+                           }
+                       })
+                       .then((resalt: Comment[]) =>{
+                           setComments(resalt);
+                       })
+;
             }, [id])
 
     useEffect(() => {
@@ -69,8 +81,9 @@ function JokeDetailPage() {
             {joke && <JokeDisplayBubble data={joke} />}
 
             {id && <CommentPostBubble jokeId={id} fatchComments={fatchComments} />}
-
-            {id && <CommentBubble jokeId={id} data={comments} fatchComments={fatchComments} />}
+            { loading ? <Loading />  :
+                id && <CommentBubble jokeId={id} data={comments} fatchComments={fatchComments} />
+            }
         </>
     )
 }

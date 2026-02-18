@@ -2,6 +2,7 @@
 import "./CommentPostBubble.css"
 import {useAuth} from "../Contexts/AuthContext.tsx";
 import toast from "react-hot-toast";
+import Loading from "../Global/Loading.tsx";
 
 interface CommentPostBubbleProps {
     jokeId: string;
@@ -12,6 +13,7 @@ interface CommentPostBubbleProps {
 
 const CommentPostBubble = ({ jokeId, fatchComments }: CommentPostBubbleProps)=> {
     const [commentContent, setCommentContent] = useState<string>('');
+    const [loading, setLoading] = useState<boolean>(false);
 
     const commentToSend = {
         commentContent : commentContent,
@@ -20,6 +22,8 @@ const CommentPostBubble = ({ jokeId, fatchComments }: CommentPostBubbleProps)=> 
 
     const postComment = (e: React.FormEvent) => {
         e.preventDefault();
+
+        setLoading(true);
 
         fetch('http://localhost:65451/api/Comments', {
             method: 'POST',
@@ -32,10 +36,12 @@ const CommentPostBubble = ({ jokeId, fatchComments }: CommentPostBubbleProps)=> 
                 console.log("Successfully sent");
                 setCommentContent("")
                 toast.success("Comment successfully sent");
+                setLoading(false);
                 fatchComments()
             }else {
                 console.log(res)
                 console.log("Failed");
+                setLoading(false);
                 toast.error("there was an error while sending your comment");
             }
         })
@@ -46,7 +52,6 @@ const CommentPostBubble = ({ jokeId, fatchComments }: CommentPostBubbleProps)=> 
 
     if (user.user?.isAuthenticated === true) {
         return (
-
             <>
                 <div className="whole-comment-post">
                     <h1>Comment this joke!</h1>
@@ -56,6 +61,8 @@ const CommentPostBubble = ({ jokeId, fatchComments }: CommentPostBubbleProps)=> 
                         <button type="submit">Post comment</button>
                     </form>
                 </div>
+                {loading && <Loading />}
+
             </>
         )
     }
