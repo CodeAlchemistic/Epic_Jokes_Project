@@ -2,6 +2,7 @@
 import './JokePostBubble.css'
 import {useAuth} from "../Contexts/AuthContext.tsx";
 import {Link} from "react-router-dom";
+import toast from "react-hot-toast";
 
 interface JokePostBubbleProps {
     onJokePosted: () => void;
@@ -44,10 +45,11 @@ function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
                     console.log(response, "nic není ok")
                     setJokeContent('');
                     setRating('');
+                    toast.success("Joke was Posted");
                     onJokePosted();
                 } else{
                     console.log(response, "Vše OK")
-
+                    toast.error("There was an error while posting your joke. Try again later")
                 }
 
                 if (response.status === 401) {

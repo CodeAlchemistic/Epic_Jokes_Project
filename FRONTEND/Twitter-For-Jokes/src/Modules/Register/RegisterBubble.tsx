@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import toast from "react-hot-toast";
 /*validation NEED TO BE ADDED: any of inputs cannot be empty; the username must not already exist*/
 
 function RegisterBubble() {
@@ -58,6 +59,7 @@ function RegisterBubble() {
 
                 setRegisterSuccesfull("successfull");
                 setConfirm(true);
+                toast.success("Successfully registered!");
 
             }
             else if (response.status === 400) {

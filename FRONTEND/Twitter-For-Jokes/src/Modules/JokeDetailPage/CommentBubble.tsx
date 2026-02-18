@@ -2,6 +2,7 @@
 import usr_icon from "../../assets/usr_icon.png";
 import {useAuth} from "../Contexts/AuthContext.tsx";
 import {useState} from "react";
+import toast from "react-hot-toast";
 
 interface CommentBubbleProps {
     jokeId: string;
@@ -73,11 +74,12 @@ const CommentBubble = ({ data, fatchComments }: CommentBubbleProps) => {
         }).then(res => {
             if (res.status === 204) {
                 console.log(res);
+                toast.success("Comment deleted successfully.");
                 fatchComments()
             }
             else{
                 console.log(res);
-
+                toast.error("Comment could not be deleted.");
             }
         })
     }

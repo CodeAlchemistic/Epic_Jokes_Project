@@ -1,6 +1,7 @@
 ﻿import {useState} from "react";
 import "./CommentPostBubble.css"
 import {useAuth} from "../Contexts/AuthContext.tsx";
+import toast from "react-hot-toast";
 
 interface CommentPostBubbleProps {
     jokeId: string;
@@ -30,10 +31,12 @@ const CommentPostBubble = ({ jokeId, fatchComments }: CommentPostBubbleProps)=> 
                 console.log(res)
                 console.log("Successfully sent");
                 setCommentContent("")
+                toast.success("Comment successfully sent");
                 fatchComments()
             }else {
                 console.log(res)
                 console.log("Failed");
+                toast.error("there was an error while sending your comment");
             }
         })
 

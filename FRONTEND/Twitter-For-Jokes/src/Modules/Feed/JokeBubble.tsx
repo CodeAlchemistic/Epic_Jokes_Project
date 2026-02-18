@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import './JokeBubble.css';
 import { convertStringFromInput } from "../Auxiliary/AuxiliaryFunctions.tsx";
 import { useAuth } from "../Contexts/AuthContext.tsx";
+import toast from "react-hot-toast";
 
 
 interface Joke {
@@ -108,9 +109,11 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                 if (response.ok) {
                     console.log("Rating aktualizován");
                     setActiveJokeId(null);
+                    toast.success("Rating was successfully changed");
                     refreshJokes();
                 } else {
-                    console.error("Chyba při updatu ratingu");
+                    console.error("There was an error while rating this joke");
+                    toast.error("There was an error while rating this joke");
                 }
             })
             .catch(err => console.error(err));
@@ -130,9 +133,11 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
             if (res.ok) {
                 setMessage("Joke was deleted successfully.");
                 refreshJokes();
+                toast.success("Your joke was successfully deleted!");
             } else {
                 const text = await res.text();
                 setError(text || "Unable to delete the joke.");
+                toast.error("there was en error while deleting the joke.");
             }
         } catch {
             setError("Network error occurred while deleting.");
