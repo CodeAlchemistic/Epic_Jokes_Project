@@ -100,8 +100,9 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
             rating: convertStringFromInput(ratingInput),
         };
 
-        fetch(`http://localhost:65451/api/Jokes/${jokeId}/rating`, {
-            method: 'PUT',
+        fetch(`http://localhost:65451/api/UsersJokes/RateJokePersonally`, {
+            method: 'POST',
+            credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(jokeToUpdate)
         })

@@ -93,13 +93,12 @@ const [showError, setShowError] = useState(false);
                     <div className="joke_lower_post_box">
                         <div>
                             <label htmlFor="numbericImput">Rating:</label>
-                            <input type="number" name="numbericImput" id="numbericImput" min="1" max="10" onChange={e => setRating(e.target.value)}/>
                         </div>
                         <button type="submit">Post joke</button>
                     </div>
                 </form>
                 {loading && <Loading />}
-                {showError && (<p className="error_message">Joke nor rating cannot be empty!</p>)}
+                {showError && (<p className="error_message">Joke cannot be empty!</p>)}
 
             </>
         )
