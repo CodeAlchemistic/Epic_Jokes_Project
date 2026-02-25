@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, {useEffect, useState} from 'react';
 import usr_icon from './../../assets/usr_icon.png';
 import './JokeBubble.css'
 import {Link} from "react-router-dom";
@@ -15,8 +15,8 @@ interface Joke {
     authorName: string;
 }
 
-
-interface RatingUpdateDto {
+interface JokeRatingForUser {
+    userId: number;
     jokeId: number;
     rating: number;
 }
@@ -53,13 +53,17 @@ const ConfirmModal = ({message, onConfirm, onCancel }: ConfirmModalProps) => {
 
 
 const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
-    const user = useAuth();
 
+
+
+    const user = useAuth();
 
     const [activeJokeId, setActiveJokeId] = useState<number | null>(null);
     const [ratingInput, setRatingInput] = useState<string>("");
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [personallRattings, setPersonallRatings] = useState<JokeRatingForUser[]>([]);
+
 
 
     //variables for confirmation modal
@@ -68,6 +72,25 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
 
     const [searchTerm, setSearchTerm] = useState<string>("");
     const [sortBy, setSortBy] = useState<string>("");
+
+    useEffect(() => {
+        fetch(`http://localhost:65451/api/UsersJokes`, {
+            method: "GET",
+            headers: {'Accept': 'application/json'},
+            credentials: 'include',
+        })
+            .then(res => {
+                if (res.ok){
+                    //setLoading(false);
+                    return res.json();
+                }
+            })
+            .then((resalt: JokeRatingForUser[]) =>{
+                setPersonallRatings(resalt);
+            })
+    }, []);
+
+    console.log(personallRattings);
 
     const filteredJokes = [...jokes]
         .filter((joke) =>
@@ -95,12 +118,14 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
     const updateRating = (e: React.FormEvent, jokeId: number) => {
         e.preventDefault();
 
-        const jokeToUpdate: RatingUpdateDto = {
-            jokeId: jokeId,
-            rating: convertStringFromInput(ratingInput),
-        };
 
-        fetch(`http://localhost:65451/api/UsersJokes/RateJokePersonally`, {
+        const jokeToUpdate = {
+            jokeId: jokeId,
+            rating: parseInt(ratingInput),
+        }
+        console.log(jokeToUpdate);
+
+        fetch(`http://localhost:65451/api/UsersJokes`, {
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
@@ -113,6 +138,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                     toast.success("Rating was successfully changed");
                     refreshJokes();
                 } else {
+                    console.log(response);
                     console.error("There was an error while rating this joke");
                     toast.error("There was an error while rating this joke");
                 }
@@ -176,7 +202,6 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
 
                 {filteredJokes.map((Joke) =>(
                     <div className="bubbleBox" key={Joke.jokeId}>
-
                         <div className="userInfoBox">
                             <img src={usr_icon} alt=""/>
                             <p>{Joke.authorName}</p>
@@ -185,12 +210,12 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                         <div className="ourFlex">
                             <div className="jokeInfoBox">
                                 <p id="rating" onClick={() => toggleForm(Joke.jokeId)}>Rating: {Joke.rating}/10</p>
-                                <p className="info_notif">click on 'Rating' to change</p>
+                                <p className="info_notif">click on 'Rating' to change your personal rating. Your personal rating will effect its average</p>
                             </div>
                             <div className={activeJokeId === Joke.jokeId ? "hid active" : "hid"}>
                                 <form className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
                                     <input min="1" max="10" id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
-                                    <button type="submit" id="submitRate">Change rating</button>
+                                    <button type="submit" id="submitRate">Change your Personal rating</button>
                                 </form>
                             </div>
                         </div>
@@ -205,7 +230,13 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                                     <Link to={`/jokes/${Joke.jokeId}`} className="comment-link">See all comments</Link>
                             </div>
                         </div>
-
+                        <div>
+                            <div>
+                                {personallRattings.map((r) => (
+                                    r.jokeId === Joke.jokeId ? <span>{r.rating}</span> : <span>XDDDDDDDDDDD</span>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 ))}
             </>

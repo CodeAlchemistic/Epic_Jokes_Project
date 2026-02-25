@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e311d6ca-1cba-4a5b-ba93-975e5e885236" name="Changes" comment="mega update">
-      <change afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/public/favicn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/public/pwa-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/public/pwa-512x512.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/UsersJokesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/UsersJokesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Entitys/UsersJokesRating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Entitys/UsersJokesRating.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/sw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/workbox-5a5d9309.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/workbox-5a5d9309.js" afterDir="false" />
+    </list>
+    <list id="5037ddae-690d-49a4-b8ef-57bdbb980b55" name="Changes by vojta" comment="">
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,31 +55,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;disable.download.node.interpreter.editor.notification&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Frontend-AuthorizedUserView&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vojta/Documents/jk/Epic_Jokes_Project&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\vojta\\Documents\\jk\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "disable.download.node.interpreter.editor.notification": "true",
+    "git-widget-placeholder": "Frontend-AuthorizedUserView",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/Tomáš/Desktop/Epic_Jokes_Project",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Users\\Tomáš\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\vojta\Documents\jk\Epic_Jokes_Project\FRONTEND\Twitter-For-Jokes\public" />
@@ -93,7 +90,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-WS-253.28294.332" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
       </set>
     </attachedChunks>
   </component>
@@ -130,6 +127,8 @@
       <workItem from="1771392689276" duration="1777000" />
       <workItem from="1771422395927" duration="2196000" />
       <workItem from="1771425169964" duration="930000" />
+      <workItem from="1772031481967" duration="5000" />
+      <workItem from="1772031504216" duration="7767000" />
     </task>
     <task id="LOCAL-00001" summary="mega update">
       <option name="closed" value="true" />

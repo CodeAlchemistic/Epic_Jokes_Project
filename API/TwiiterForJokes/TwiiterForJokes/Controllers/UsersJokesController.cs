@@ -3,6 +3,8 @@ using TwiiterForJokes.Context;
 using TwiiterForJokes.Entitys;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
+using TwiiterForJokes.DtoEntities;
+using Microsoft.EntityFrameworkCore;
 
 namespace TwiiterForJokes.Controllers;
 
@@ -21,23 +23,19 @@ public class UsersJokesController : Controller
 
 
     [HttpPost]
-    public async Task<ActionResult<UsersJokesRating>> RateJokePersonally(int jokeId, int rating)
+    public async Task<ActionResult<UsersJokesRating>> RateJokePersonally(CreatePersonalUserRating createPersonalUserRating)
     {
-
-
-
 
         var usrId = User.FindFirstValue(ClaimTypes.NameIdentifier)
                     ?? User.FindFirstValue("sub");
 
-
         UsersJokesRating personalRating = new UsersJokesRating();
 
         personalRating.UsrId =  Convert.ToInt32(usrId);
-        personalRating.JokeId = jokeId;
-        personalRating.Rating = rating;
+        personalRating.JokeId = createPersonalUserRating.JokeId;
+        personalRating.Rating = createPersonalUserRating.Rating;
 
-        if (jokeId == null)
+        if (createPersonalUserRating.JokeId == null)
         {
             return NotFound("This joke does not exist.");
         }
@@ -46,9 +44,29 @@ public class UsersJokesController : Controller
             return NotFound("This user does not exist - you must be logged in.");
         }
 
+        UsersJokesRating? existingRating = _context.UsersJokesRatings.FirstOrDefault(u => u.JokeId == createPersonalUserRating.JokeId && u.UsrId == Convert.ToInt32(usrId));
+
+        if (existingRating != null)
+        {
+            return BadRequest("UŽ MÌ TO NEBAVÍ");
+        }
+
         await _context.UsersJokesRatings.AddAsync(personalRating);
         await _context.SaveChangesAsync();
 
         return Ok(personalRating);
     }
+
+
+    [HttpGet]
+    public async Task<ActionResult<List<UsersJokesRating>>> GetAllPersonalRatings()
+    {
+        var usrId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                    ?? User.FindFirstValue("sub");
+
+        List<UsersJokesRating> ratings = await _context.UsersJokesRatings.AsNoTracking().Where(u => u.UsrId == Convert.ToInt32(usrId)).ToListAsync();
+
+        return Ok(ratings);
+    }
+    
 }
