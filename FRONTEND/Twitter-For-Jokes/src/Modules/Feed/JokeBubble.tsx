@@ -88,7 +88,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
             .then((resalt: JokeRatingForUser[]) =>{
                 setPersonallRatings(resalt);
             })
-    }, []);
+    }, [printUserPersonalRatting]);
 
     console.log(personallRattings);
 
@@ -114,6 +114,18 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
         setRatingInput("");
     };
 
+    function printUserPersonalRatting(jokeIdFromMap: number) {
+
+        if (personallRattings === undefined) {
+            return false;
+        }
+
+        const resFromFind = personallRattings.find(({jokeId}) => jokeId === jokeIdFromMap)
+
+        return resFromFind?.rating;
+        refreshJokes();
+    }
+
 
     const updateRating = (e: React.FormEvent, jokeId: number) => {
         e.preventDefault();
@@ -121,7 +133,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
 
         const jokeToUpdate = {
             jokeId: jokeId,
-            rating: parseInt(ratingInput),
+            rating: convertStringFromInput(ratingInput),
         }
         console.log(jokeToUpdate);
 
@@ -191,15 +203,14 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
             )}
                 {message && <p>{message}</p>}
                 {error && <p>{error}</p>}
-
-                <input type="text" placeholder="Serch for author..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
-
-                <select onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
-                    <option value="none">Default order</option>
-                    <option value="desc">Best rating (10 - 1)</option>
-                    <option value="asc">Worst rating (1 - 10)</option>
-                </select>
-
+                <div id="filter-containder">
+                    <input id="search-input" type="text" placeholder="Serch for author..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+                    <select id="order-combobox" onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
+                        <option className="order-selection" value="none">Default order</option>
+                        <option className="order-selection" value="desc">Best rating (10 - 1)</option>
+                        <option className="order-selection" value="asc">Worst rating (1 - 10)</option>
+                    </select>
+                </div>
                 {filteredJokes.map((Joke) =>(
                     <div className="bubbleBox" key={Joke.jokeId}>
                         <div className="userInfoBox">
@@ -231,11 +242,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                             </div>
                         </div>
                         <div>
-                            <div>
-                                {personallRattings.map((r) => (
-                                    r.jokeId === Joke.jokeId ? <span>{r.rating}</span> : <span>XDDDDDDDDDDD</span>
-                                ))}
-                            </div>
+                            {printUserPersonalRatting(Joke.jokeId) ? <span>Your personal rating for this joke is: {printUserPersonalRatting(Joke.jokeId)}</span>: <span>You didnt rate tis joke yet</span>}
                         </div>
                     </div>
                 ))}

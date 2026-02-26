@@ -48,7 +48,7 @@ public class UsersJokesController : Controller
 
         if (existingRating != null)
         {
-            return BadRequest("UŽ MÌ TO NEBAVÍ");
+            return BadRequest("UÅ¾ mÄ› to nebavÃ½");
         }
 
         await _context.UsersJokesRatings.AddAsync(personalRating);
