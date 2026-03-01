@@ -198,3 +198,7 @@
 #second-button {
     border: 3px solid darkred;
 }
+
+select > option {
+    background-color: #0e123e;
+}
