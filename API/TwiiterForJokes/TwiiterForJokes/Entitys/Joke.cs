@@ -19,7 +19,7 @@ namespace TwiiterForJokes.Entitys
         [Column("joke_content")]
         public string JokeContent { get; set; }
         [Column("rating")]
-        public int Rating { get; set; }
+        public decimal Rating { get; set; }
         
         
 

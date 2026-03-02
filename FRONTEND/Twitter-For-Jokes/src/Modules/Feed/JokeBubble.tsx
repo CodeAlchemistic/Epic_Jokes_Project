@@ -90,8 +90,6 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
             })
     }, [printUserPersonalRatting]);
 
-    console.log(personallRattings);
-
     const filteredJokes = [...jokes]
         .filter((joke) =>
             joke.authorName.toLowerCase().includes(searchTerm.toLowerCase())
@@ -99,9 +97,9 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
         .sort((a, b) => {
             switch (sortBy.toLowerCase()) {
                 case "desc":
-                    return parseFloat(b.rating) - parseFloat(a.rating);
+                    return parseFloat(b.rating.toString()) - parseFloat(a.rating.toString());
                 case "asc":
-                    return parseFloat(a.rating) - parseFloat(b.rating);
+                    return parseFloat(a.rating.toString()) - parseFloat(b.rating.toString());
                 default:
                     return 0;
             }
@@ -135,7 +133,6 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
             jokeId: jokeId,
             rating: convertStringFromInput(ratingInput),
         }
-        console.log(jokeToUpdate);
 
         fetch(`http://localhost:65451/api/UsersJokes`, {
             method: 'POST',
@@ -192,6 +189,8 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
     };
 
     if (user.user?.isAuthenticated === true) {
+        console.log(filteredJokes);
+        console.log(jokes);
         return (
             <>
             {isConfirmOpen && (

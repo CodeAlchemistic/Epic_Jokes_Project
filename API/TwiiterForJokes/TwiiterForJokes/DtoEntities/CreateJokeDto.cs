@@ -13,6 +13,6 @@
         /// </summary>
         //public int UsrId { get; set; }
         public string JokeContent { get; set; }
-        public int Rating { get; set; }
+        public decimal Rating { get; set; }
     }
 }

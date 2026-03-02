@@ -3,7 +3,7 @@
     public class CreatePersonalUserRating
     {
         public int JokeId { get; set; }
-        public int Rating { get; set; }
+        public decimal Rating { get; set; }
 
     }
 }

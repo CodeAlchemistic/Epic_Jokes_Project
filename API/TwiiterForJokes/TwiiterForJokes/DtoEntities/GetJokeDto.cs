@@ -8,7 +8,7 @@
     {
         public int JokeId { get; set; }
         public string JokeContent { get; set; }
-        public int Rating { get; set; }
+        public string Rating { get; set; }
         public string AuthorName { get; set; } = null!;
     }
 }

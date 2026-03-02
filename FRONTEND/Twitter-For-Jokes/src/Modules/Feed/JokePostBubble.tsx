@@ -11,14 +11,13 @@ interface JokePostBubbleProps {
 
 function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
     const [jokeContent, setJokeContent] = useState('');
-    const [rating, setRating] = useState('');
     const [loading, setLoading] = useState(false);
 
     const postJoke = (e: React.FormEvent) => {
         e.preventDefault();
 
         /* if statement to show error message to the user during creation of joke if any of these is empty*/
-        if (jokeContent.trim() === "" || rating === "") {
+        if (jokeContent.trim() === "") {
             setShowError(true);
             return;
         }
@@ -29,8 +28,10 @@ function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
 
         const jokeToPost = {
             jokeContent: jokeContent,
-            rating: rating
+            rating: 0
         }
+
+        console.log(jokeToPost);
 
         setLoading(true);
 
@@ -47,7 +48,6 @@ function JokePostBubble({ onJokePosted }: JokePostBubbleProps) {
                 if (response.ok) {
                     console.log(response, "nic není ok")
                     setJokeContent('');
-                    setRating('');
                     toast.success("Joke was Posted");
                     setLoading(false);
                     onJokePosted();
@@ -91,9 +91,6 @@ const [showError, setShowError] = useState(false);
                         <textarea value={jokeContent} onChange={e => setJokeContent(e.target.value)} placeholder="write here..."></textarea>
                     </div>
                     <div className="joke_lower_post_box">
-                        <div>
-                            <label htmlFor="numbericImput">Rating:</label>
-                        </div>
                         <button type="submit">Post joke</button>
                     </div>
                 </form>

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +29,7 @@ namespace TwiiterForJokes.Controllers
             {
                 JokeId = j.JokeId,
                 JokeContent = j.JokeContent,
-                Rating = j.Rating,
+                Rating =   j.Rating.ToString(new CultureInfo("cs-CZ")),
                 AuthorName = j.Usr!.UserName
             })
             .ToListAsync();
@@ -51,7 +52,7 @@ namespace TwiiterForJokes.Controllers
                GetJokeDto jokeToSend = new GetJokeDto();
                jokeToSend.JokeId = joke.JokeId;
                jokeToSend.JokeContent = joke.JokeContent;
-               jokeToSend.Rating = joke.Rating;
+               jokeToSend.Rating = Convert.ToString(joke.Rating);
                jokeToSend.AuthorName = _context.Users.FirstOrDefault(u => u.UsrId == joke.UsrId)?.UserName!;
 
                return Ok(jokeToSend);

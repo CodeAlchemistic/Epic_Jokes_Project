@@ -18,5 +18,5 @@ public class UsersJokesRating
 
 
      [Column("rating")]
-     public int Rating { get; set; }
+     public decimal Rating { get; set; }
 }

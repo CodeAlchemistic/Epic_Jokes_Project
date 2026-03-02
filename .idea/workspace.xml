@@ -6,10 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e311d6ca-1cba-4a5b-ba93-975e5e885236" name="Changes" comment="mega update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/.idea/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/.idea/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/JokesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/JokesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/UsersJokesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Controllers/UsersJokesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/DtoEntities/CreateJokeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/DtoEntities/CreateJokeDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/DtoEntities/CreatePersonalUserRating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/DtoEntities/CreatePersonalUserRating.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/DtoEntities/GetJokeDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/DtoEntities/GetJokeDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Entitys/Joke.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Entitys/Joke.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Entitys/UsersJokesRating.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/TwiiterForJokes/TwiiterForJokes/Entitys/UsersJokesRating.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/sw.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokePostBubble.tsx" afterDir="false" />
     </list>
-    <list id="5037ddae-690d-49a4-b8ef-57bdbb980b55" name="Changes by vojta" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,12 +45,12 @@
     &quot;assignee&quot;: &quot;TrueTeXar&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/CodeAlchemistic/Epic_Jokes_Project.git&quot;,
-    &quot;accountId&quot;: &quot;2a9dda40-750f-4578-9d9f-24069c2ad3c1&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/CodeAlchemistic/Epic_Jokes_Project.git",
+    "accountId": "a1c0b797-70b0-4c81-968d-433d175e5cc4"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -64,7 +72,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tomáš/Desktop/Epic_Jokes_Project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vojta/Documents/jk/Epic_Jokes_Project&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -72,7 +80,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Tomáš\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\vojta\\Documents\\jk\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -86,7 +94,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-WS-253.28294.332" />
       </set>
     </attachedChunks>
   </component>
@@ -123,10 +131,6 @@
       <workItem from="1771392689276" duration="1777000" />
       <workItem from="1771422395927" duration="2196000" />
       <workItem from="1771425169964" duration="930000" />
-      <workItem from="1772031481967" duration="5000" />
-      <workItem from="1772031504216" duration="7767000" />
-      <workItem from="1772374878779" duration="7000" />
-      <workItem from="1772374940644" duration="252000" />
     </task>
     <task id="LOCAL-00001" summary="mega update">
       <option name="closed" value="true" />
