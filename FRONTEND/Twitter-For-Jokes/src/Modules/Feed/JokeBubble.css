@@ -202,3 +202,8 @@
 select > option {
     background-color: #0e123e;
 }
+
+
+#rating-form {
+    width: fit-content;
+}

@@ -14,6 +14,7 @@ import {AuthProvider} from "./Modules/Contexts/AuthContext.tsx";
 import {Toaster} from "react-hot-toast";
 import JokeDetailPage from "./Pages/JokeDetailPage.tsx";
 import Profile from "./Pages/Profile/Profile.tsx";
+import {Snowfall} from "react-snowfall";
 
 
 
@@ -24,6 +25,13 @@ function App() {
               <Toaster position="top-left" reverseOrder={false} />
 
               <NavBar />
+                <div id="snowfall-effect">
+                    <Snowfall style={{position: "fixed",
+                        width: "100vw",
+                        height: "100vh",
+                        zIndex: 1,
+                        pointerEvents: "none",}} color="white" snowflakeCount={100} />
+                </div>
 
               <Routes>
                   <Route path="/" element={<Landing />} />

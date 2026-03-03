@@ -223,7 +223,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                                 <p className="info_notif">click on 'Rating' to change your personal rating. Your personal rating will effect its average</p>
                             </div>
                             <div className={activeJokeId === Joke.jokeId ? "hid active" : "hid"}>
-                                <form className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
+                                <form id="rating-form" className="ourFlex" onSubmit={(e) => updateRating(e, Joke.jokeId)}>
                                     <input min="1" max="10" id="ratingChange" value={ratingInput} onChange={(e) => setRatingInput(e.target.value)} type="number"></input>
                                     <button type="submit" id="submitRate">Change your Personal rating</button>
                                 </form>
