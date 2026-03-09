@@ -189,8 +189,6 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
     };
 
     if (user.user?.isAuthenticated === true) {
-        console.log(filteredJokes);
-        console.log(jokes);
         return (
             <>
             {isConfirmOpen && (

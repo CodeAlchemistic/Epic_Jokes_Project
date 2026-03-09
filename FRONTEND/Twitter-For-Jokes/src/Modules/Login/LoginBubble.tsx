@@ -3,7 +3,8 @@ import {useNavigate} from "react-router-dom";
 import toast from "react-hot-toast";
 import {useAuth} from "../Contexts/AuthContext.tsx";
 import Loading from "../Global/Loading.tsx";
-
+import {useReward} from "partycles";
+import {useRef} from "react";
 
 function LoginBubble() {
     const navigate = useNavigate();
@@ -14,6 +15,15 @@ function LoginBubble() {
     const [errorNotification, setErrorNotification] = useState(false);
     const [confirm, showConfirm] = useState(false);
     const [loading , setLoading] = useState(false);
+
+    const logInButton = useRef<HTMLButtonElement>(null);
+
+
+    const {reward} = useReward(logInButton as React.RefObject<HTMLElement>, 'fireworks',{
+        particleCount: 90,
+        spread: 9,
+        colors: ['#ff0000', '#00ff00', '#0000ff'],
+    });
 
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -47,6 +57,7 @@ function LoginBubble() {
                 toast.success("Login successfull");
 
                 setLoading(false);
+                await reward();
                 navigate("/feed");
             }else{
                 console.log(response);
@@ -75,7 +86,7 @@ function LoginBubble() {
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" id="password" value={password}  onChange={(e) => setPassword(e.target.value)} />
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" ref={logInButton}>Login</button>
         </form>
             {loading && <Loading />}
             {confirm && (<p className="confirm-message">Login was successfull</p>)}
