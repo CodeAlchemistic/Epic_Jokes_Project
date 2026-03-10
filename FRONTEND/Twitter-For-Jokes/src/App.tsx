@@ -44,8 +44,8 @@ function App() {
                   <Route path="/register" element={<Register />} />
 
                   <Route path="/jokes/:id" element={<JokeDetailPage />} />
-              </Routes>
 
+              </Routes>
               <Footer />
           </AuthProvider>
       </>

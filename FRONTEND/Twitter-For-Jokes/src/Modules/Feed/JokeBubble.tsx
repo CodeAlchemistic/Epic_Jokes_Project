@@ -228,7 +228,7 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                             </div>
                         </div>
                         <div className="lower-flex">
-                            {user.user?.userName === Joke.authorName?
+                            {user.user?.userName === Joke.authorName || user.user?.userName === 'AdminAdmin' ?
                             <button className="delete_btn" onClick={() => {
                                 setSelectedJokeId(Joke.jokeId)
                                 setIsConfirmOpen(true);

@@ -2,6 +2,7 @@
 import usr_icon from './../../assets/usr_icon.png';
 import './CreatorBubble.css';
 import Loading from "../Global/Loading.tsx";
+import {useAuth} from "../Contexts/AuthContext.tsx";
 
 interface creatorToDesplay {
      userId: number;
@@ -38,6 +39,22 @@ const CreatorBubble: React.FC = () => {
 
     console.log(data);
 
+    const auth = useAuth();
+
+
+    function deleteUserByAdmin(userId: number) {
+        fetch(`http://localhost:65451/api/Users/${userId}`, {
+            method: 'DELETE',
+            headers: {'Accept': 'application/json'}
+        }).then(r => {
+            if (r.ok) {
+                console.log('user deleted successfully.');
+            } else {
+                console.log('user deleted failfully.');
+            }
+        })
+    }
+
         if (loading) {
            return <Loading />;
         }else {
@@ -48,6 +65,10 @@ const CreatorBubble: React.FC = () => {
                            <img src={usr_icon} alt="usr_icon" />
                            <p>{creatorToDesplay.userName}</p>
                            <p>Creator's jokes: {creatorToDesplay.jokesCount}</p>
+                           {auth.user?.userName === 'AdminAdmin'?
+                           <button onClick={() => deleteUserByAdmin(creatorToDesplay.userId)}>Delete User</button> :
+                               <></>
+                           }
                        </div>
                    ))}
                </>

@@ -68,4 +68,22 @@ public class UsersController : Controller
         return Ok(usr);
            
     }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteUser(int id)
+    {
+        Usr? userToFind = _context.Users.FindAsync(id).Result;
+
+        if (userToFind == null)
+        {
+            return BadRequest("User not found.");
+        }
+
+        _context.Users.Remove(userToFind);
+        await _context.SaveChangesAsync();
+
+        return Ok();
+
+    }
+
 }

@@ -109,7 +109,7 @@ const CommentBubble = ({ data, fatchComments }: CommentBubbleProps) => {
                         <p>{comment.authorName}</p>
                     </div>
                    <CommentText text={comment.commentContent}></CommentText>
-                    { comment.authorName === user.user?.userName?
+                    { comment.authorName === user.user?.userName || user.user?.userName === 'AdminAdmin'?
                     <button onClick={() => {
                         setIsConfirmOpen(true);
                         setSelectedCommentId(comment.commentId);
