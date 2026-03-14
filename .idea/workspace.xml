@@ -8,12 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/sw.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/sw.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/workbox-5a5d9309.js" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/dev-dist/workbox-5a5d9309.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/Modules/Feed/JokeBubble.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/FRONTEND/Twitter-For-Jokes/src/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +36,12 @@
     &quot;assignee&quot;: &quot;TrueTeXar&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/CodeAlchemistic/Epic_Jokes_Project.git&quot;,
-    &quot;accountId&quot;: &quot;a1c0b797-70b0-4c81-968d-433d175e5cc4&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/CodeAlchemistic/Epic_Jokes_Project.git",
+    "accountId": "2a9dda40-750f-4578-9d9f-24069c2ad3c1"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -69,7 +63,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/Tomáš/Desktop/Epic_Jokes_Project",
+    "last_opened_file_path": "C:/Users/Tomas/Desktop/Epic_Jokes_Project",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -77,7 +71,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Users\\Tomáš\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\Tomas\\Desktop\\Epic_Jokes_Project\\FRONTEND\\Twitter-For-Jokes\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -91,7 +85,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.30387.83" />
       </set>
     </attachedChunks>
   </component>
@@ -129,6 +123,7 @@
       <workItem from="1771422395927" duration="2196000" />
       <workItem from="1771425169964" duration="930000" />
       <workItem from="1772559283344" duration="3297000" />
+      <workItem from="1773502035564" duration="7814000" />
     </task>
     <task id="LOCAL-00001" summary="mega update">
       <option name="closed" value="true" />
