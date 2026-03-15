@@ -108,6 +108,13 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
 
 
     const toggleForm = (id: number) => {
+
+        if (personallRattings.find(({jokeId}) => jokeId === id) && personallRattings.find(({userId}) => userId === user.user?.userId)){
+
+            toast.error("you already rated this joke")
+            return
+        }
+
         setActiveJokeId(activeJokeId === id ? null : id);
         setRatingInput("");
     };
@@ -198,8 +205,6 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                     onCancel={() => setIsConfirmOpen(false)}
                 />
             )}
-                {message && <p>{message}</p>}
-                {error && <p>{error}</p>}
                 <div id="filter-containder">
                     <input id="search-input" type="text" placeholder="Serch for author..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
                     <select id="order-combobox" onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
@@ -252,13 +257,14 @@ const JokeBuble: React.FC<JokeBubbleProps> = ({ jokes, refreshJokes }) => {
                 {message && <p>{message}</p>}
                 {error && <p>{error}</p>}
 
-                <input type="text" placeholder="Serch for author..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
-
-                <select onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
-                    <option value="none">Default order</option>
-                    <option value="desc">Best rating (10 - 1)</option>
-                    <option value="asc">Worst rating (1 - 10)</option>
-                </select>
+                <div id="filter-containder">
+                    <input id="search-input" type="text" placeholder="Serch for author..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+                    <select id="order-combobox" onChange={(e) => setSortBy(e.target.value)} value={sortBy}>
+                        <option className="order-selection" value="none">Default order</option>
+                        <option className="order-selection" value="desc">Best rating (10 - 1)</option>
+                        <option className="order-selection" value="asc">Worst rating (1 - 10)</option>
+                    </select>
+                </div>
 
                 {filteredJokes.map((Joke) =>(
                     <div className="bubbleBox" key={Joke.jokeId}>

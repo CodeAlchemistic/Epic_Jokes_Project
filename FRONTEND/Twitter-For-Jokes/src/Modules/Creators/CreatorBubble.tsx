@@ -37,7 +37,6 @@ const CreatorBubble: React.FC = () => {
             })
     }, []);
 
-    console.log(data);
 
     const auth = useAuth();
 
